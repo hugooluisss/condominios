@@ -39,7 +39,7 @@
 			</div><!-- /.login-logo -->
 		<div class="login-box-body">
 			<p class="login-box-msg">
-					<!--<img src="{$PAGE.ruta}img/logo.jpg" class="img-rounded"/>-->
+					<img src="{$PAGE.ruta}img/logo.jpg" class="img-rounded"/>
 					<br />
 					Identificate para iniciar sesión
 				</p>

@@ -106,6 +106,27 @@
 						</ul>
 					</li>
 					{/if}
+					{if $PAGE.usuario->getIdTipo() eq 1}
+					<li class="{if in_array($PAGE.modulo, array('areas', 'departamentos'))}active{/if} treeview">
+						<a href="#">
+							<span>Catálogos</span> <i class="fa fa-angle-left pull-right"></i>
+						</a>
+						<ul class="treeview-menu">
+							<li {if $PAGE.modulo eq 'areas'}class="active"{/if}><a href="areas"><i class="fa fa-map"></i> Áreas</a></li>
+							<li {if $PAGE.modulo eq 'departamentos'}class="active"{/if}><a href="departamentos"><i class="fa fa-home"></i> Departamentos</a></li>
+						</ul>
+					</li>
+					{/if}
+					{if in_array($PAGE.usuario->getIdTipo(), array(1, 3))}
+					<li class="{if in_array($PAGE.modulo, array('infracciones'))}active{/if} treeview">
+						<a href="#">
+							<span>Infracciones</span> <i class="fa fa-angle-left pull-right"></i>
+						</a>
+						<ul class="treeview-menu">
+							<li {if $PAGE.modulo eq 'infracciones'}class="active"{/if}><a href="infracciones"><i class="fa fa-info-circle"></i> Lista</a></li>
+						</ul>
+					</li>
+					{/if}
 				</ul>
 			</section>
 			<!-- /.sidebar -->

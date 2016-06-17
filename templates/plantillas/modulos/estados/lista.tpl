@@ -16,7 +16,7 @@
 						<td>{$row.nombre}</td>
 						<td>{$row.termino}</td>
 						<td style="text-align: right">
-							<button type="button" class="btn btn-success btn-circle" action="modificar" title="Modificar" datos='{$row.json}'><i class="fa fa-pencil"></i></button>
+							<button type="button" class="btn btn-success" action="modificar" title="Modificar" datos='{$row.json}'><i class="fa fa-pencil"></i></button>
 						</td>
 					</tr>
 				{/foreach}

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-06-16 23:06:15
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-17 12:29:58
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1409721575573e9dd2cda5f9-70823435%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1466136374,
+      1 => 1466184597,
       2 => 'file',
     ),
   ),
@@ -149,6 +149,27 @@ plugins/upload/css/jquery.fileupload.css">
 						<ul class="treeview-menu">
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='admonUsuarios'){?>class="active"<?php }?>><a href="admonUsuarios"><i class="fa fa-users"></i> Usuarios</a></li>
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='estados'){?>class="active"<?php }?>><a href="estados"><i class="fa fa-bookmark"></i> Estados</a></li>
+						</ul>
+					</li>
+					<?php }?>
+					<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getIdTipo()==1){?>
+					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('areas','departamentos'))){?>active<?php }?> treeview">
+						<a href="#">
+							<span>Catálogos</span> <i class="fa fa-angle-left pull-right"></i>
+						</a>
+						<ul class="treeview-menu">
+							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='areas'){?>class="active"<?php }?>><a href="areas"><i class="fa fa-map"></i> Áreas</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='departamentos'){?>class="active"<?php }?>><a href="departamentos"><i class="fa fa-home"></i> Departamentos</a></li>
+						</ul>
+					</li>
+					<?php }?>
+					<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getIdTipo(),array(1,3))){?>
+					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('infracciones'))){?>active<?php }?> treeview">
+						<a href="#">
+							<span>Infracciones</span> <i class="fa fa-angle-left pull-right"></i>
+						</a>
+						<ul class="treeview-menu">
+							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='infracciones'){?>class="active"<?php }?>><a href="infracciones"><i class="fa fa-info-circle"></i> Lista</a></li>
 						</ul>
 					</li>
 					<?php }?>

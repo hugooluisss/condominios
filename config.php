@@ -110,4 +110,50 @@ $conf['cestados'] = array(
 	'descripcion' => 'Controlador de estados',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+#Areas
+$conf['areas'] = array(
+	'controlador' => 'areas.php',
+	'vista' => 'areas/panel.tpl',
+	'descripcion' => 'Administración de areas',
+	'seguridad' => true,
+	'js' => array('area.class.js'),
+	'jsTemplate' => array('areas.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['listaAreas'] = array(
+	'controlador' => 'areas.php',
+	'vista' => 'areas/lista.tpl',
+	'descripcion' => 'Lista de areas',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+	
+$conf['careas'] = array(
+	'controlador' => 'areas.php',
+	'descripcion' => 'Controlador de areas',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+
+#Departamentos
+$conf['departamentos'] = array(
+	'controlador' => 'departamentos.php',
+	'vista' => 'departamentos/panel.tpl',
+	'descripcion' => 'Administración de departamentos',
+	'seguridad' => true,
+	'js' => array('departamento.class.js'),
+	'jsTemplate' => array('departamentos.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['listaDepartamentos'] = array(
+	'controlador' => 'departamentos.php',
+	'vista' => 'departamentos/lista.tpl',
+	'descripcion' => 'Lista de departamentos',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+	
+$conf['cdepartamentos'] = array(
+	'controlador' => 'departamentos.php',
+	'descripcion' => 'Controlador de departamentos',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
 ?>
