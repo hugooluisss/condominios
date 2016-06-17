@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-03-15 09:02:55
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-16 23:18:08
          compiled from "templates/plantillas/modulos/usuarios/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21782054955e4995dc08606-44099636%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0792779071f81e2ec50c2a73a57f2de0982f47da' => 
     array (
       0 => 'templates/plantillas/modulos/usuarios/lista.tpl',
-      1 => 1457984103,
+      1 => 1466137085,
       2 => 'file',
     ),
   ),
@@ -25,9 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_55e4995dc351b6_14612996')) {function content_55e4995dc351b6_14612996($_smarty_tpl) {?><div class="box">
-	<div class="box-header">
-		<h3 class="box-title">Lista de usuarios</h3>
-	</div><!-- /.box-header -->
 	<div class="box-body">
 		<table id="tblUsuarios" class="table table-bordered table-hover">
 			<thead>
