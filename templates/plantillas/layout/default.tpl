@@ -118,12 +118,12 @@
 					</li>
 					{/if}
 					{if in_array($PAGE.usuario->getIdTipo(), array(1, 3))}
-					<li class="{if in_array($PAGE.modulo, array('infracciones'))}active{/if} treeview">
+					<li class="{if in_array($PAGE.modulo, array('registroInfracciones'))}active{/if} treeview">
 						<a href="#">
 							<span>Infracciones</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
-							<li {if $PAGE.modulo eq 'infracciones'}class="active"{/if}><a href="infracciones"><i class="fa fa-info-circle"></i> Lista</a></li>
+							<li {if $PAGE.modulo eq 'registroInfracciones'}class="active"{/if}><a href="registroInfracciones"><i class="fa fa-info-circle"></i> Registro</a></li>
 						</ul>
 					</li>
 					{/if}
@@ -212,6 +212,9 @@
     
     <link rel="stylesheet" media="screen" type="text/css" href="{$PAGE.ruta}plugins/colorpicker/bootstrap-colorpicker.css" />
     <script type="text/javascript" src="{$PAGE.ruta}plugins/colorpicker/bootstrap-colorpicker.js"></script>
+    
+    <link rel="stylesheet" media="screen" type="text/css" href="{$PAGE.ruta}plugins/timepicker/bootstrap-timepicker.css" />
+    <script type="text/javascript" src="{$PAGE.ruta}plugins/timepicker/bootstrap-timepicker.js"></script>
     
     <script src="{$PAGE.ruta}dist/js/app.js" type="text/javascript"></script>
     

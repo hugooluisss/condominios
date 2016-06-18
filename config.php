@@ -156,4 +156,27 @@ $conf['cdepartamentos'] = array(
 	'descripcion' => 'Controlador de departamentos',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+#Infracciones
+$conf['registroInfracciones'] = array(
+	'controlador' => 'infracciones.php',
+	'vista' => 'infracciones/panelRegistro.tpl',
+	'descripcion' => 'Registro de infracciones',
+	'seguridad' => true,
+	'js' => array('infraccion.class.js'),
+	'jsTemplate' => array('registroInfracciones.js'),
+	'capa' => LAYOUT_DEFECTO);
+
+$conf['listaInfraccionesRegistradas'] = array(
+	'controlador' => 'infracciones.php',
+	'vista' => 'infracciones/listaRegistradas.tpl',
+	'descripcion' => 'Lista de infracciones registradas',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+
+$conf['cinfracciones'] = array(
+	'controlador' => 'infracciones.php',
+	'descripcion' => 'Controlador de infracciones',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
 ?>

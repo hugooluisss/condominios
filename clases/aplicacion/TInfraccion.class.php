@@ -17,6 +17,7 @@ class TInfraccion{
 	private $servidor;
 	private $camara;
 	private $descripcion;
+	private $inciso;
 	
 	/**
 	* Constructor de la clase
@@ -28,7 +29,7 @@ class TInfraccion{
 	public function TInfraccion($id = ''){
 		$this->departamento = new TDepartamento;
 		$this->estado = new TEstado;
-		$this->usuario = new Tusuario;
+		$this->usuario = new TUsuario;
 		$this->area = new TArea;
 		
 		$this->setId($id);
@@ -46,12 +47,28 @@ class TInfraccion{
 	
 	public function setId($id = ''){
 		if ($id == '') return false;
-		
+
 		$db = TBase::conectaDB();
 		$rs = $db->Execute("select * from infraccion where idInfraccion = ".$id);
 		
-		foreach($rs->fields as $field => $val)
-			$this->$field = $val;
+		foreach($rs->fields as $field => $val){
+			switch($field){
+				case 'idDepartamento':
+					$this->departamento = new TDepartamento($val);
+				break;
+				case 'idEstado':
+					$this->estado = new TEstado($val);
+				break;
+				case 'idUsuario':
+					$this->usuario = new TUsuario($val);
+				break;
+				case 'idArea':
+					$this->area = new TArea($val);
+				break;
+				default:
+					$this->$field = $val;
+			}
+		}
 		
 		return true;
 	}
@@ -229,6 +246,109 @@ class TInfraccion{
 	}
 	
 	/**
+	* Establece el número de inciso
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setInciso($val = ''){
+		$this->inciso = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna el número de inciso
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Numero
+	*/
+	
+	public function getInciso(){
+		return $this->inciso;
+	}
+	
+	/**
+	* Establece la descripcion
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setDescripcion($val = ''){
+		$this->descripcion = $val;
+		return true;
+	}
+	
+	/**
+	* Retorna la descripcion
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getDescripcion(){
+		return $this->descripcion;
+	}
+	
+	/**
+	* Establece el monto
+	*
+	* @autor Hugo
+	* @access public
+	* @param string $val Valor a asignar
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setMonto(){
+		$db = TBase::conectaDB();
+		if ($this->monto <> '') return true;
+		
+		#el periodo inicia el dia 25 y termina el 24 del siguiente
+		$dia = date("d");
+		$now = new DateTime;
+		$inicio = new DateTime;
+		$fin = new DateTime;
+		if ($now->format("d") < 25)
+			$inicio->sub(new DateInterval("P1M"));
+		else
+			$fin->add(new DateInterval("P1M"));
+		
+		$rs = $db->Execute("select count(*) as total from infraccion where idDepartamento = ".$this->departamento->getId()." and fecha between '".$inicio->format("Y-m-")."25' and '".$fin->format("Y-m-")."24'");
+		
+		switch($rs->fields['total']){
+			case 0: #es la primera vez
+				$this->monto = $this->area->getCuota() * .1;
+			break;
+			case 1: #con esta sería la segunda vez
+				$this->monto = $this->area->getCuota() * .5;
+			break;
+			default:
+				$this->monto = $this->area->getCuota();
+		}
+		
+		return true;
+	}
+	
+	/**
+	* Retorna la descripcion
+	*
+	* @autor Hugo
+	* @access public
+	* @return string Texto
+	*/
+	
+	public function getMonto(){
+		return $this->monto;
+	}
+	
+	/**
 	* Guarda los datos en la base de datos, si no existe un identificador entonces crea el objeto
 	*
 	* @autor Hugo
@@ -245,7 +365,8 @@ class TInfraccion{
 		$db = TBase::conectaDB();
 		
 		if ($this->getId() == ''){
-			$rs = $db->Execute("INSERT INTO infraccion(idDepartamento, idEstado, idUsuario, idArea) VALUES(".$this->departamento->getId().", ".$this->estado->getId().", ".$this->usuario->getId().", ".$this->area->getId().");");
+			$this->setMonto();
+			$rs = $db->Execute("INSERT INTO infraccion(idDepartamento, idEstado, idUsuario, idArea, monto) VALUES(".$this->departamento->getId().", ".$this->estado->getId().", ".$this->usuario->getId().", ".$this->area->getId().", ".$this->getMonto().");");
 			if (!$rs) return false;
 				
 			$this->idInfraccion = $db->Insert_ID();
@@ -253,7 +374,6 @@ class TInfraccion{
 		
 		if ($this->getId() == '')
 			return false;
-
 			
 		$rs = $db->Execute("UPDATE infraccion
 			SET
@@ -262,10 +382,11 @@ class TInfraccion{
 				idArea = ".$this->area->getId().",
 				fecha = '".$this->getFecha()."',
 				hora = '".$this->getHora()."',
-				servidor = ".$this->getFecha().",
-				camara = ".$this->getCamara().",
-				fecha = '".$this->getFecha()."'
-			WHERE idArea = ".$this->getId());
+				servidor = '".$this->getServidor()."',
+				camara = '".$this->getCamara()."',
+				inciso = '".$this->getInciso()."',
+				descripcion = '".$this->getDescripcion()."'
+			WHERE idInfraccion = ".$this->getId());
 			
 		return $rs?true:false;
 	}
@@ -282,7 +403,7 @@ class TInfraccion{
 		if ($this->getId() == '') return false;
 		
 		$db = TBase::conectaDB();
-		$rs = $db->Execute("delete from area where idArea = ".$this->getId());
+		$rs = $db->Execute("delete from infraccion where idInfraccion = ".$this->getId());
 		
 		return $rs?true:false;
 	}

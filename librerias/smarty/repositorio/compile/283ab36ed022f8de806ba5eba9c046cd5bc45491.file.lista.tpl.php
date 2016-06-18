@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-06-17 09:34:46
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-18 00:40:24
          compiled from "templates/plantillas/modulos/estados/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:17808342415763747818d0a1-80525129%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '283ab36ed022f8de806ba5eba9c046cd5bc45491' => 
     array (
       0 => 'templates/plantillas/modulos/estados/lista.tpl',
-      1 => 1466171361,
+      1 => 1466190555,
       2 => 'file',
     ),
   ),
@@ -50,7 +50,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['termino'];?>
 </td>
 						<td style="text-align: right">
-							<button type="button" class="btn btn-success btn-circle" action="modificar" title="Modificar" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
+							<button type="button" class="btn btn-success" action="modificar" title="Modificar" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
 '><i class="fa fa-pencil"></i></button>
 						</td>
 					</tr>
