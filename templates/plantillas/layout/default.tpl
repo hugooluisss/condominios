@@ -118,12 +118,13 @@
 					</li>
 					{/if}
 					{if in_array($PAGE.usuario->getIdTipo(), array(1, 3))}
-					<li class="{if in_array($PAGE.modulo, array('registroInfracciones'))}active{/if} treeview">
+					<li class="{if in_array($PAGE.modulo, array('registroInfracciones', 'autorizarInfracciones'))}active{/if} treeview">
 						<a href="#">
 							<span>Infracciones</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
 							<li {if $PAGE.modulo eq 'registroInfracciones'}class="active"{/if}><a href="registroInfracciones"><i class="fa fa-info-circle"></i> Registro</a></li>
+							<li {if $PAGE.modulo eq 'autorizarInfracciones'}class="active"{/if}><a href="autorizarInfracciones"><i class="fa fa-check"></i> Autorizar</a></li>
 						</ul>
 					</li>
 					{/if}

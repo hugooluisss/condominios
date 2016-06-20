@@ -1,5 +1,8 @@
 <?php
 global $objModulo;
+$repositorio = "repositorio/infracciones/";
+$url_repo = $ini['sistema']['url'].$repositorio.($_GET['infraccion'] == ''?$_POST['infraccion']:$_GET['infraccion']).'/';
+				
 switch($objModulo->getId()){
 	case 'registroInfracciones':
 		$db = TBase::conectaDB();
@@ -37,6 +40,35 @@ switch($objModulo->getId()){
 		}
 		$smarty->assign("lista", $datos);
 	break;
+	case 'listaAutorizaciones':
+		$db = TBase::conectaDB();
+		
+		$rs = $db->Execute("select *, b.clave as claveDepto, c.nombre as area from infraccion a join departamento b using(idDepartamento) join area c using(idArea) join estado d using(idEstado) where idEstado in (1, 2)");
+		$datos = array();
+		while(!$rs->EOF){
+			$rs->fields['json'] = json_encode($rs->fields);
+			array_push($datos, $rs->fields);
+			
+			$rs->moveNext();
+		}
+		$smarty->assign("lista", $datos);
+	break;
+	case 'listaImagenes':
+		$directorio = scandir($repositorio.$_GET['infraccion'].'/');
+		$imgs = array();
+		foreach($directorio as $archivo){
+			if (! ($archivo == '.' or $archivo == '..' or $archivo == 'thumbnail')){
+				$img = array();
+				$img['nombre'] = $archivo;
+				$img['miniatura'] = $url_repo."thumbnail/".$archivo;
+				$img['real'] = $url_repo.$archivo;
+				
+				array_push($imgs, $img);
+			}
+		}
+		
+		$smarty->assign("lista", $imgs);
+	break;
 	case 'cinfracciones':
 		switch($objModulo->getAction()){
 			case 'registrar':
@@ -60,6 +92,19 @@ switch($objModulo->getId()){
 			case 'del':
 				$obj = new TInfraccion($_POST['id']);
 				echo json_encode(array("band" => $obj->eliminar()));
+			break;
+			case 'upload':
+				$upload_handler = new UploadHandler(array(
+					"upload_dir" => $repositorio.$_GET['infraccion'].'/',
+					"upload_url" => $url_repo
+				));
+			break;
+			case 'delImagen':
+				if (unlink($repositorio.($_GET['infraccion'] == ''?$_POST['infraccion']:$_GET['infraccion']).'/'.$_POST['nombre'])){
+					unlink($repositorio.($_GET['infraccion'] == ''?$_POST['infraccion']:$_GET['infraccion']).'/thumbnail/'.$_POST['nombre']);
+					echo json_encode(array("band" => true));
+				}else
+					echo json_encode(array("band" => false, "mensaje" => "No se pudo borrar el archivo"));
 			break;
 		}
 	break;

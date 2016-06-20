@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-06-18 00:38:38
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-20 08:57:39
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1409721575573e9dd2cda5f9-70823435%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1466228316,
+      1 => 1466431058,
       2 => 'file',
     ),
   ),
@@ -164,12 +164,13 @@ plugins/upload/css/jquery.fileupload.css">
 					</li>
 					<?php }?>
 					<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getIdTipo(),array(1,3))){?>
-					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('registroInfracciones'))){?>active<?php }?> treeview">
+					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('registroInfracciones','autorizarInfracciones'))){?>active<?php }?> treeview">
 						<a href="#">
 							<span>Infracciones</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='registroInfracciones'){?>class="active"<?php }?>><a href="registroInfracciones"><i class="fa fa-info-circle"></i> Registro</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='autorizarInfracciones'){?>class="active"<?php }?>><a href="autorizarInfracciones"><i class="fa fa-check"></i> Autorizar</a></li>
 						</ul>
 					</li>
 					<?php }?>

@@ -32,7 +32,22 @@ TInfraccion = function(){
 			if (fn.after != undefined)
 				fn.after(data);
 			if (data.band == 'false'){
-				console.log("Error al eliminar la infracci�n");
+				console.log("Error al eliminar la infracción");
+			}
+		}, "json");
+	};
+	
+	this.delImagen = function(nombre, infraccion, fn){
+		if (fn.before != undefined)
+			fn.before();
+				
+		$.post('?mod=cinfracciones&action=delImagen&infraccion=' + infraccion, {
+			"nombre": nombre
+		}, function(data){
+			if (fn.after != undefined)
+				fn.after(data);
+			if (data.band == false){
+				console.log("Ocurrió un error al eliminar el objeto");
 			}
 		}, "json");
 	};

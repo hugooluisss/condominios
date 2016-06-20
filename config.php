@@ -179,4 +179,27 @@ $conf['cinfracciones'] = array(
 	'descripcion' => 'Controlador de infracciones',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+$conf['autorizarInfracciones'] = array(
+	'controlador' => 'infracciones.php',
+	'vista' => 'infracciones/panelAutorizacion.tpl',
+	'descripcion' => 'Autorización de infracciones',
+	'seguridad' => true,
+	'js' => array('infraccion.class.js'),
+	'jsTemplate' => array('autorizacionInfracciones.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['listaAutorizaciones'] = array(
+	'controlador' => 'infracciones.php',
+	'vista' => 'infracciones/listaAutorizaciones.tpl',
+	'descripcion' => 'Lista de infracciones a autorizar o rechazar',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+	
+$conf['listaImagenes'] = array(
+	'controlador' => 'infracciones.php',
+	'vista' => 'infracciones/listaImagenes.tpl',
+	'descripcion' => 'Lista de imagenes',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
 ?>

@@ -46,7 +46,7 @@
 					</div>
 					<div class="form-group">
 						<label for="txtCorreo" class="col-lg-2">Correo</label>
-						<div class="col-lg-2">
+						<div class="col-lg-4">
 							<input class="form-control" id="txtCorreo" name="txtCorreo" value="">
 						</div>
 					</div>
