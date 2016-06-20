@@ -16,6 +16,14 @@ $(document).ready(function(){
 				$("#winAutorizar").find("#id").val(el.idInfraccion);
 				$('#fileupload').fileupload({url: "?mod=cinfracciones&action=upload&infraccion=" + el.idInfraccion});
 				getListaImagenes();
+				$("#btnRechazar").hide();
+				$("#btnAplicar").hide();
+					
+				if (el.idEstado == 1){
+					$("#btnRechazar").show();
+					$("#btnAplicar").show();
+				}
+				
 				$("#winAutorizar").modal();
 				
 				$('#panelTabs a[href="#add"]').tab('show');
@@ -73,4 +81,42 @@ $(document).ready(function(){
 			
 		});
 	}
+	
+	$("#btnAplicar").click(function(){
+		if (confirm("¿Seguro?")){
+			var obj = new TInfraccion;
+			obj.setAutorizada($("#id").val(), {
+				before: function(){
+					$("#btnAplicar").prop("disabled", true);
+				}, after: function(resp){
+					$("#btnAplicar").prop("disabled", false);
+					
+					if (resp.band){
+						getLista();
+						$("#winAutorizar").modal("hide");
+					}else
+						alert("Ups... no se pudo aplicar");
+				}
+			});
+		}
+	});
+	
+	$("#btnRechazar").click(function(){
+		if (confirm("¿Seguro?")){
+			var obj = new TInfraccion;
+			obj.setRechazada($("#id").val(), {
+				before: function(){
+					$("#btnAplicar").prop("disabled", true);
+				}, after: function(resp){
+					$("#btnAplicar").prop("disabled", false);
+					
+					if (resp.band){
+						getLista();
+						$("#winAutorizar").modal("hide");
+					}else
+						alert("Ups... no se pudo rechazar");
+				}
+			});
+		}
+	});
 });

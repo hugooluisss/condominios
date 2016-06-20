@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-06-20 11:27:37
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-20 13:13:39
          compiled from "templates/plantillas/modulos/infracciones/panelAutorizacion.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:336383055576557cb5c4479-16071944%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'aa3ea510350341c662d9f7daaec7ad91602d2735' => 
     array (
       0 => 'templates/plantillas/modulos/infracciones/panelAutorizacion.tpl',
-      1 => 1466440056,
+      1 => 1466446417,
       2 => 'file',
     ),
   ),
@@ -82,9 +82,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div>
 				<br />
 				<div class="row">
-					<div class="col-lg-2 text-right text-danger">Monto Establecido en la captura</div>
-					<div class="col-lg-5" campo="monto"></div>
+					<div class="col-lg-2 text-right text-danger">Monto</div>
+					<div class="col-lg-4" campo="monto"></div>
+					<div class="col-lg-2 text-right text-danger">Ocasión</div>
+					<div class="col-lg-4" campo="ocasion"></div>
 				</div>
+				<br />
 				<p class="text-center">
 					<span class="btn btn-success fileinput-button">
 						<i class="glyphicon glyphicon-plus"></i>
@@ -100,8 +103,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-success">Aplicar</button>
-				<button type="button" class="btn btn-danger">Rechazar</button>
+				<button type="button" class="btn btn-success" id="btnAplicar">Aplicar</button>
+				<button type="button" class="btn btn-danger" id="btnRechazar">Rechazar</button>
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 				<input id="id" name="id" value="" type="hidden"/>
 			</div>

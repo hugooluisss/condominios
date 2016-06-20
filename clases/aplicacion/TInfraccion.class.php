@@ -18,6 +18,7 @@ class TInfraccion{
 	private $camara;
 	private $descripcion;
 	private $inciso;
+	private $ocasion;
 	
 	/**
 	* Constructor de la clase
@@ -308,7 +309,8 @@ class TInfraccion{
 	
 	public function setMonto(){
 		$db = TBase::conectaDB();
-		if ($this->monto <> '') return true;
+		if ($this->getFecha() == '') return false;
+		#if ($this->monto <> '') return true;
 		
 		#el periodo inicia el dia 25 y termina el 24 del siguiente
 		$dia = date("d");
@@ -320,16 +322,19 @@ class TInfraccion{
 		else
 			$fin->add(new DateInterval("P1M"));
 		
-		$rs = $db->Execute("select count(*) as total from infraccion where idDepartamento = ".$this->departamento->getId()." and fecha between '".$inicio->format("Y-m-")."25' and '".$fin->format("Y-m-")."24'");
+		$rs = $db->Execute("select count(*) as total from infraccion where idDepartamento = ".$this->departamento->getId()." and fecha between '".$inicio->format("Y-m-")."25' and '".$fin->format("Y-m-")."24' and idEstado = 2 and idArea = ".$this->area->getId()." and inciso = '".$this->getInciso()."' and not idInfraccion = '".$this->getId()."'");
 		
 		switch($rs->fields['total']){
 			case 0: #es la primera vez
+				$this->ocasion = 1;
 				$this->monto = $this->area->getCuota() * .1;
 			break;
 			case 1: #con esta sería la segunda vez
+				$this->ocasion = 2;
 				$this->monto = $this->area->getCuota() * .5;
 			break;
 			default:
+				$this->ocasion = $rs->fields['total'] + 1;
 				$this->monto = $this->area->getCuota();
 		}
 		
@@ -385,7 +390,9 @@ class TInfraccion{
 				servidor = '".$this->getServidor()."',
 				camara = '".$this->getCamara()."',
 				inciso = '".$this->getInciso()."',
-				descripcion = '".$this->getDescripcion()."'
+				descripcion = '".$this->getDescripcion()."',
+				monto = ".$this->getMonto().",
+				ocasion = ".$this->ocasion."
 			WHERE idInfraccion = ".$this->getId());
 			
 		return $rs?true:false;

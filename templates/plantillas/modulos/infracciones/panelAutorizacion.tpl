@@ -61,9 +61,12 @@
 				</div>
 				<br />
 				<div class="row">
-					<div class="col-lg-2 text-right text-danger">Monto Establecido en la captura</div>
-					<div class="col-lg-5" campo="monto"></div>
+					<div class="col-lg-2 text-right text-danger">Monto</div>
+					<div class="col-lg-4" campo="monto"></div>
+					<div class="col-lg-2 text-right text-danger">Ocasión</div>
+					<div class="col-lg-4" campo="ocasion"></div>
 				</div>
+				<br />
 				<p class="text-center">
 					<span class="btn btn-success fileinput-button">
 						<i class="glyphicon glyphicon-plus"></i>
@@ -79,8 +82,8 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-success">Aplicar</button>
-				<button type="button" class="btn btn-danger">Rechazar</button>
+				<button type="button" class="btn btn-success" id="btnAplicar">Aplicar</button>
+				<button type="button" class="btn btn-danger" id="btnRechazar">Rechazar</button>
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 				<input id="id" name="id" value="" type="hidden"/>
 			</div>

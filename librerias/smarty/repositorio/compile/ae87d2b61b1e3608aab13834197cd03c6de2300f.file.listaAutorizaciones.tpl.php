@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-06-18 09:26:19
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-20 12:56:02
          compiled from "templates/plantillas/modulos/infracciones/listaAutorizaciones.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1247321514576558bbadece4-06756888%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ae87d2b61b1e3608aab13834197cd03c6de2300f' => 
     array (
       0 => 'templates/plantillas/modulos/infracciones/listaAutorizaciones.tpl',
-      1 => 1466259976,
+      1 => 1466445359,
       2 => 'file',
     ),
   ),
@@ -57,7 +57,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 </td>
 				<td style="text-align: right">
 					<button type="button" class="btn btn-success" action="autorizar" title="Autorizar" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>
-'><i class="fa fa-check"></i></button>
+'><i class="fa fa-keyboard-o"></i></button>
 				</td>
 			</tr>
 		<?php } ?>

@@ -77,9 +77,17 @@ $(document).ready(function(){
 			$("#dvLista").find("[action=modificar]").click(function(){
 				var el = jQuery.parseJSON($(this).attr("datos"));
 				
-				$("#id").val(el.idArea);
-				$("#txtNombre").val(el.nombre);
-				$("#txtCuota").val(el.cuota);
+				$("#id").val(el.idInfraccion);
+				$("#txtFecha").val(el.fecha);
+				$("#txtHora").val(el.hora);
+				$("#txtDepartamento").attr("identificador", el.idDepartamento);
+				$("#txtDepartamento").val(el.clave  + " " + el.condominio + " - " + el.inquilino);
+				$("#selArea").val(el.idArea);
+				$("#txtHora").val(el.hora);
+				$("#txtInciso").val(el.inciso);
+				$("#txtServidor").val(el.servidor);
+				$("#txtCamara").val(el.camara);
+				$("#txtDescripcion").val(el.descripcion);
 				
 				$('#panelTabs a[href="#add"]').tab('show');
 			});

@@ -43,7 +43,7 @@ switch($objModulo->getId()){
 	case 'listaAutorizaciones':
 		$db = TBase::conectaDB();
 		
-		$rs = $db->Execute("select *, b.clave as claveDepto, c.nombre as area from infraccion a join departamento b using(idDepartamento) join area c using(idArea) join estado d using(idEstado) where idEstado in (1, 2)");
+		$rs = $db->Execute("select *, b.clave as claveDepto, c.nombre as area from infraccion a join departamento b using(idDepartamento) join area c using(idArea) join estado d using(idEstado) where (idEstado = 1 and fecha between '".(date(Y)-1).date('-m-d')."' and now()) or idEstado = 2");
 		$datos = array();
 		while(!$rs->EOF){
 			$rs->fields['json'] = json_encode($rs->fields);
@@ -92,6 +92,18 @@ switch($objModulo->getId()){
 			case 'del':
 				$obj = new TInfraccion($_POST['id']);
 				echo json_encode(array("band" => $obj->eliminar()));
+			break;
+			case 'autorizar':
+				$obj = new TInfraccion($_POST['id']);
+				$obj->estado->setId(2);
+				$obj->setMonto();
+				
+				echo json_encode(array("band" => $obj->guardar()));
+			break;
+			case 'rechazar':
+				$obj = new TInfraccion($_POST['id']);
+				$obj->estado->setId(3);
+				echo json_encode(array("band" => $obj->guardar()));
 			break;
 			case 'upload':
 				$upload_handler = new UploadHandler(array(

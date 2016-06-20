@@ -51,4 +51,46 @@ TInfraccion = function(){
 			}
 		}, "json");
 	};
+	
+	this.setAutorizar = function(id, fn){
+		$.post('cinfracciones', {
+			"id": id,
+			"action": "autorizar"
+		}, function(data){
+			if (fn.after != undefined)
+				fn.after(data);
+				
+			if (data.band == 'false'){
+				console.log("Error al autorizar la infracción");
+			}
+		}, "json");
+	};
+	
+	this.setAutorizada = function(id, fn){
+		$.post('cinfracciones', {
+			"id": id,
+			"action": "autorizar"
+		}, function(data){
+			if (fn.after != undefined)
+				fn.after(data);
+				
+			if (data.band == 'false'){
+				console.log("Error al autorizar la infracción");
+			}
+		}, "json");
+	};
+	
+	this.setRechazada = function(id, fn){
+		$.post('cinfracciones', {
+			"id": id,
+			"action": "rechazar"
+		}, function(data){
+			if (fn.after != undefined)
+				fn.after(data);
+				
+			if (data.band == 'false'){
+				console.log("Error al rechazar la infracción");
+			}
+		}, "json");
+	};
 };
