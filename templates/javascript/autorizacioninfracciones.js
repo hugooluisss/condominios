@@ -1,6 +1,24 @@
 $(document).ready(function(){
 	getLista();
 	var upload;
+	
+	var ventana = new Object;
+	
+	$("#btnCartaFicha").click(function(){
+		var obj = new TInfraccion;
+		obj.getCarta($("#winAutorizar").find("#id").val(), {
+			before: function(){
+				$("#btnCartaFicha").prop("disabled", true);
+			},
+			after: function(resp){
+				$("#btnCartaFicha").prop("disabled", false);
+				if (resp.band)
+					openDocumento(resp.doc);
+				else
+					alert("Ups... el documento no se pudo generar");
+			}
+		});
+	});
     
     function getLista(){
 		$.get("listaAutorizaciones", function( data ) {
@@ -18,10 +36,12 @@ $(document).ready(function(){
 				getListaImagenes();
 				$("#btnRechazar").hide();
 				$("#btnAplicar").hide();
-					
+				$("#btnCartaFicha").prop("disabled", false);
+				
 				if (el.idEstado == 1){
 					$("#btnRechazar").show();
 					$("#btnAplicar").show();
+					$("#btnCartaFicha").prop("disabled", true);
 				}
 				
 				$("#winAutorizar").modal();
@@ -119,4 +139,20 @@ $(document).ready(function(){
 			});
 		}
 	});
+	
+	function openDocumento(documento){
+		if (ventana == undefined || ventana == null)
+			ventana = window.open(documento,'_blank');
+		else{
+			try{
+				ventana.location.href = documento;
+			}catch(er){
+				ventana = window.open(documento,'_blank');
+			}
+			
+			
+		}
+		
+		ventana.focus();
+	}
 });

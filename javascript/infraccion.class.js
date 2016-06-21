@@ -93,4 +93,19 @@ TInfraccion = function(){
 			}
 		}, "json");
 	};
+	
+	this.getCarta = function(id, fn){
+		if (fn.before != undefined) fn.before();
+		
+		$.post("cinfracciones", {
+			"action": "generarCarta",
+			"id": id
+		}, function(resp){
+			if (fn.after != undefined) fn.after(resp);
+			
+			if (!resp.band)
+				console.log("Ocurrió un error al generar el documento");
+				
+		}, "json");
+	}
 };

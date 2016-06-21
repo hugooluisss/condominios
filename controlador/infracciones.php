@@ -118,6 +118,21 @@ switch($objModulo->getId()){
 				}else
 					echo json_encode(array("band" => false, "mensaje" => "No se pudo borrar el archivo"));
 			break;
+			case 'generarCarta':
+				require_once(getcwd()."/repositorio/pdf/carta.php");
+				
+				$obj = new RCarta();
+				$obj->generar($_POST['id']);
+				$documento = $obj->Output();
+				
+				
+				if ($documento == '')
+					$result = array("doc" => "", "band" => false);
+				else
+					$result = array("doc" => $documento, "band" => true);
+
+				print json_encode($result);
+			break;
 		}
 	break;
 }

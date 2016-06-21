@@ -354,6 +354,18 @@ class TInfraccion{
 	}
 	
 	/**
+	* Retorna el número de ocasión
+	*
+	* @autor Hugo
+	* @access public
+	* @return int Número
+	*/
+	
+	public function getOcasion(){
+		return $this->ocasion;
+	}
+	
+	/**
 	* Guarda los datos en la base de datos, si no existe un identificador entonces crea el objeto
 	*
 	* @autor Hugo
@@ -392,7 +404,7 @@ class TInfraccion{
 				inciso = '".$this->getInciso()."',
 				descripcion = '".$this->getDescripcion()."',
 				monto = ".$this->getMonto().",
-				ocasion = ".$this->ocasion."
+				ocasion = ".$this->getOcasion()."
 			WHERE idInfraccion = ".$this->getId());
 			
 		return $rs?true:false;

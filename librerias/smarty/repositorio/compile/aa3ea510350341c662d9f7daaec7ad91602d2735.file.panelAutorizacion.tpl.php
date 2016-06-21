@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-06-20 13:13:39
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-20 20:19:21
          compiled from "templates/plantillas/modulos/infracciones/panelAutorizacion.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:336383055576557cb5c4479-16071944%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'aa3ea510350341c662d9f7daaec7ad91602d2735' => 
     array (
       0 => 'templates/plantillas/modulos/infracciones/panelAutorizacion.tpl',
-      1 => 1466446417,
+      1 => 1466470513,
       2 => 'file',
     ),
   ),
@@ -38,6 +38,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<h1>Infracción</h1>
 			</div>
 			<div class="modal-body">
+				<div class="row text-right">
+					<div class="col-lg-12">
+						<div class="btn-group btn-group-xs" role="group" aria-label="...">
+							<button class="btn btn-primary" id="btnCartaFicha"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Generar carta y ficha</button>
+						</div>
+					</div>
+				</div>
 				<div class="row">
 					<div class="col-lg-2 text-right text-success">No.</div>
 					<div class="col-lg-4" campo="idInfraccion"></div>

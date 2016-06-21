@@ -17,6 +17,13 @@
 				<h1>Infracción</h1>
 			</div>
 			<div class="modal-body">
+				<div class="row text-right">
+					<div class="col-lg-12">
+						<div class="btn-group btn-group-xs" role="group" aria-label="...">
+							<button class="btn btn-primary" id="btnCartaFicha"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Generar carta y ficha</button>
+						</div>
+					</div>
+				</div>
 				<div class="row">
 					<div class="col-lg-2 text-right text-success">No.</div>
 					<div class="col-lg-4" campo="idInfraccion"></div>
