@@ -43,7 +43,6 @@ $(document).ready(function(){
 				$("#id").val(), 
 				$("#txtClave").val(),
 				$("#txtCondominio").val(),
-				$("#txtUbicacion").val(),
 				$("#txtInquilino").val(),
 				$("#txtCorreo").val(),
 				$("#txtReferencia").val(),
@@ -73,7 +72,6 @@ $(document).ready(function(){
 				$("#id").val(el.idDepartamento);
 				$("#txtClave").val(el.clave);
 				$("#txtCondominio").val(el.condominio);
-				$("#txtUbicacion").val(el.ubicacion);
 				$("#txtInquilino").val(el.inquilino);
 				$("#txtCorreo").val(el.correo);
 				$("#txtReferencia").val(el.referencia);

@@ -21,7 +21,7 @@ switch($objModulo->getId()){
 				
 				$obj->setId($_POST['id']);
 				$obj->setNombre($_POST['nombre']);
-				$obj->setCuota($_POST['cuota']);
+				$obj->setIncisos($_POST['incisos']);
 				
 				echo json_encode(array("band" => $obj->guardar()));
 			break;

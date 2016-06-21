@@ -9,7 +9,7 @@
 class TArea{
 	private $idArea;
 	private $nombre;
-	private $cuota;
+	private $incisos;
 	
 	/**
 	* Constructor de la clase
@@ -91,8 +91,8 @@ class TArea{
 	* @return boolean True si se realizó sin problemas
 	*/
 	
-	public function setCuota($val = 0){
-		$this->cuota = $val;
+	public function setIncisos($val = 0){
+		$this->incisos = $val;
 		return true;
 	}
 	
@@ -104,8 +104,8 @@ class TArea{
 	* @return float Texto
 	*/
 	
-	public function getCuota(){
-		return $this->cuota == ''?0:$this->cuota;
+	public function getIncisos(){
+		return $this->incisos == ''?0:$this->incisos;
 	}
 	
 	/**
@@ -133,7 +133,7 @@ class TArea{
 		$rs = $db->Execute("UPDATE area
 			SET
 				nombre = '".$this->getNombre()."',
-				cuota = '".$this->getCuota()."'
+				incisos = '".$this->getIncisos()."'
 			WHERE idArea = ".$this->getId());
 			
 		return $rs?true:false;

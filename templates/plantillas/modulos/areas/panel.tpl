@@ -27,9 +27,9 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="txtCuota" class="col-lg-2">Cuota</label>
+						<label for="txtIncisos" class="col-lg-2">Incisos</label>
 						<div class="col-lg-2">
-							<input class="form-control" id="txtCuota" name="txtCuota" value="0.00">
+							<input class="form-control" id="txtIncisos" name="txtIncisos" value="1">
 						</div>
 					</div>
 				</div>

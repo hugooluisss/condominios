@@ -218,4 +218,26 @@ $conf['listaPorPagar'] = array(
 	'descripcion' => 'Lista de infracciones por pagar',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+#Reportes
+$conf['reporteGeneral'] = array(
+	'controlador' => 'reportes.php',
+	'vista' => 'reportes/panelGeneral.tpl',
+	'descripcion' => 'Filtro general para la generación de reportes',
+	'seguridad' => true,
+	'jsTemplate' => array('reporteGeneral.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['listaReporteGeneral'] = array(
+	'controlador' => 'reportes.php',
+	'vista' => 'reportes/listaGeneral.tpl',
+	'descripcion' => 'Lista general de infracciones',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+	
+$conf['creportes'] = array(
+	'controlador' => 'reportes.php',
+	'descripcion' => 'Controlador de reportes',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
 ?>

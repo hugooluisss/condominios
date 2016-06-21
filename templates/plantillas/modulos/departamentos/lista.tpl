@@ -3,8 +3,7 @@
 		<table id="tblLista" class="table table-bordered table-hover">
 			<thead>
 				<tr>
-					<th>#</th>
-					<th>Clave</th>
+					<th>Departamento</th>
 					<th>Condominio</th>
 					<th>Inquilino</th>
 					<th>&nbsp;</th>
@@ -13,7 +12,6 @@
 			<tbody>
 				{foreach from=$lista item="row"}
 					<tr>
-						<td>{$row.idDepartamento}</td>
 						<td>{$row.clave}</td>
 						<td>{$row.condominio}</td>
 						<td>{$row.inquilino}</td>

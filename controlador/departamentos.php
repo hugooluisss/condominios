@@ -23,7 +23,6 @@ switch($objModulo->getId()){
 				$obj->setInquilino($_POST['inquilino']);
 				$obj->setClave($_POST['clave']);
 				$obj->setCondominio($_POST['condominio']);
-				$obj->setUbicacion($_POST['ubicacion']);
 				$obj->setCorreo($_POST['correo']);
 				$obj->setReferencia($_POST['referencia']);
 				

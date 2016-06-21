@@ -5,7 +5,7 @@
 				<tr>
 					<th>#</th>
 					<th>Nombre</th>
-					<th>Cuota</th>
+					<th>Incisos</th>
 					<th>&nbsp;</th>
 				</tr>
 			</thead>
@@ -14,7 +14,7 @@
 					<tr>
 						<td>{$row.idArea}</td>
 						<td>{$row.nombre}</td>
-						<td class="text-right">{$row.cuota}</td>
+						<td class="text-right">{$row.incisos}</td>
 						<td style="text-align: right">
 							<button type="button" class="btn btn-success" action="modificar" title="Modificar" datos='{$row.json}'><i class="fa fa-pencil"></i></button>
 							<button type="button" class="btn btn-danger" action="eliminar" title="Eliminar" identificador='{$row.idArea}'><i class="fa fa-times"></i></button>

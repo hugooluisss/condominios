@@ -14,7 +14,7 @@ $(document).ready(function(){
 		debug: true,
 		rules: {
 			txtNombre: "required",
-			txtCuota: {
+			txtIncisos: {
 			 	required: true,
 			 	number: true,
 				min: 1
@@ -26,7 +26,7 @@ $(document).ready(function(){
 			obj.add(
 				$("#id").val(), 
 				$("#txtNombre").val(),
-				$("#txtCuota").val(),
+				$("#txtIncisos").val(),
 				{
 					after: function(datos){
 						if (datos.band){
@@ -52,7 +52,7 @@ $(document).ready(function(){
 				
 				$("#id").val(el.idArea);
 				$("#txtNombre").val(el.nombre);
-				$("#txtCuota").val(el.cuota);
+				$("#txtIncisos").val(el.incisos);
 				
 				$('#panelTabs a[href="#add"]').tab('show');
 			});

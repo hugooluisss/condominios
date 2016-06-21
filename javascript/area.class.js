@@ -1,13 +1,13 @@
 TArea = function(){
 	var self = this;
 	
-	this.add = function(id, nombre, cuota, fn){
+	this.add = function(id, nombre, incisos, fn){
 		if (fn.before !== undefined) fn.before();
 		
 		$.post('careas', {
 				"id": id,
 				"nombre": nombre,
-				"cuota": cuota,
+				"incisos": incisos,
 				"action": 'add'
 			}, function(data){
 				if (data.band == 'false')

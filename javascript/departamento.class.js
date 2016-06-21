@@ -1,14 +1,13 @@
 TDepartamento = function(){
 	var self = this;
 	
-	this.add = function(id, clave, condominio, ubicacion, inquilino, correo, referencia, fn){
+	this.add = function(id, clave, condominio, inquilino, correo, referencia, fn){
 		if (fn.before !== undefined) fn.before();
 		
 		$.post('cdepartamentos', {
 				"id": id,
 				"clave": clave,
 				"condominio": condominio,
-				"ubicacion": ubicacion,
 				"inquilino": inquilino,
 				"correo": correo,
 				"referencia": referencia,

@@ -133,6 +133,16 @@
 							{/if}
 						</ul>
 					</li>
+					{if in_array($PAGE.usuario->getIdTipo(), array(1, 2))}
+					<li class="{if in_array($PAGE.modulo, array('reporteGeneral'))}active{/if} treeview">
+						<a href="#">
+							<span>Reportes</span> <i class="fa fa-angle-left pull-right"></i>
+						</a>
+						<ul class="treeview-menu">
+							<li {if $PAGE.modulo eq 'reporteGeneral'}class="active"{/if}><a href="reporteGeneral"><i class="fa fa-print"></i> General</a></li>
+						</ul>
+					</li>
+					{/if}
 				</ul>
 			</section>
 			<!-- /.sidebar -->

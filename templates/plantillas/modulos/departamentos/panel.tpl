@@ -21,21 +21,15 @@
 			<div class="box">
 				<div class="box-body">
 					<div class="form-group">
-						<label for="txtClave" class="col-lg-2">Clave</label>
+						<label for="txtClave" class="col-lg-2">Departamento</label>
 						<div class="col-lg-4">
 							<input class="form-control" id="txtClave" name="txtClave" maxlength="10">
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="txtCondominio" class="col-lg-2">Condominio <small>(Clave)</small></label>
+						<label for="txtCondominio" class="col-lg-2">Condominio</label>
 						<div class="col-lg-8">
 							<input class="form-control" id="txtCondominio" name="txtCondominio" value="" placeholder="">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="txtUbicacion" class="col-lg-2">Ubicación</label>
-						<div class="col-lg-8">
-							<input class="form-control" id="txtUbicacion" name="txtUbicacion" value="">
 						</div>
 					</div>
 					<div class="form-group">

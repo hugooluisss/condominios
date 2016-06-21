@@ -114,32 +114,6 @@ class TDepartamento{
 	}
 	
 	/**
-	* Establece la ubicacion
-	*
-	* @autor Hugo
-	* @access public
-	* @param float $val Valor a asignar
-	* @return boolean True si se realizó sin problemas
-	*/
-	
-	public function setUbicacion($val = ''){
-		$this->ubicacion = $val;
-		return true;
-	}
-	
-	/**
-	* Retorna la ubicacion
-	*
-	* @autor Hugo
-	* @access public
-	* @return float Texto
-	*/
-	
-	public function getUbicacion(){
-		return $this->ubicacion;
-	}
-	
-	/**
 	* Establece la referencia para los pagos
 	*
 	* @autor Hugo
@@ -244,7 +218,6 @@ class TDepartamento{
 			SET
 				clave = '".$this->getClave()."',
 				condominio = '".$this->getCondominio()."',
-				ubicacion = '".$this->getUbicacion()."',
 				inquilino = '".$this->getInquilino()."',
 				correo = '".$this->getCorreo()."',
 				referencia = '".$this->getReferencia()."'
