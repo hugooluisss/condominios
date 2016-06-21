@@ -202,4 +202,20 @@ $conf['listaImagenes'] = array(
 	'descripcion' => 'Lista de imagenes',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+$conf['pagarInfraccion'] = array(
+	'controlador' => 'infracciones.php',
+	'vista' => 'infracciones/panelPagar.tpl',
+	'descripcion' => 'Pago de infracciones',
+	'seguridad' => true,
+	'js' => array('infraccion.class.js'),
+	'jsTemplate' => array('pagoInfracciones.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['listaPorPagar'] = array(
+	'controlador' => 'infracciones.php',
+	'vista' => 'infracciones/listaPorPagar.tpl',
+	'descripcion' => 'Lista de infracciones por pagar',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
 ?>

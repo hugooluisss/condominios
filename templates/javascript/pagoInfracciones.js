@@ -1,52 +1,29 @@
 $(document).ready(function(){
 	getLista();
-	var upload;
 	
-	var ventana = new Object;
-	
-	$("#btnCartaFicha").click(function(){
-		var obj = new TInfraccion;
-		obj.getCarta($("#winAutorizar").find("#id").val(), {
-			before: function(){
-				$("#btnCartaFicha").prop("disabled", true);
-			},
-			after: function(resp){
-				$("#btnCartaFicha").prop("disabled", false);
-				if (resp.band)
-					openDocumento(resp.doc);
-				else
-					alert("Ups... el documento no se pudo generar");
-			}
-		});
-	});
-    
     function getLista(){
-		$.get("listaAutorizaciones", function( data ) {
+		$.get("listaPorPagar", function( data ) {
 			$(".box .box-body").html(data);
 			
-			$(".box .box-body").find("[action=autorizar]").click(function(){
+			$(".box .box-body").find("[action=pagar]").click(function(){
 				var el = jQuery.parseJSON($(this).attr("datos"));
 				
-				$.each(el, function(key, value) {
-					$("#winAutorizar").find("[campo=" + key +"]").text(value);
-				});
-				
-				$("#winAutorizar").find("#id").val(el.idInfraccion);
-				$('#fileupload').fileupload({url: "?mod=cinfracciones&action=upload&infraccion=" + el.idInfraccion});
-				getListaImagenes();
-				$("#btnRechazar").hide();
-				$("#btnAplicar").hide();
-				$("#btnCartaFicha").prop("disabled", false);
-				
-				if (el.idEstado == 1){
-					$("#btnRechazar").show();
-					$("#btnAplicar").show();
-					$("#btnCartaFicha").prop("disabled", true);
+				if(confirm("¿Seguro?")){
+					var obj = new TInfraccion;
+					obj.setPagada(el.idInfraccion, {
+						before: function(){
+							$(this).prop("disabled", true);
+						},
+						after: function(resp){
+							$(this).prop("disabled", false);
+							
+							if (resp.band)
+								getLista();
+							else
+								alert("Upss... no se pudo establecer como pagada");
+						}
+					});
 				}
-				
-				$("#winAutorizar").modal();
-				
-				//$('#panelTabs a[href="#add"]').tab('show');
 			});
 			
 			$("#tblLista").DataTable({

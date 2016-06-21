@@ -94,6 +94,21 @@ TInfraccion = function(){
 		}, "json");
 	};
 	
+	this.setPagada = function(id, fn){
+		$.post('cinfracciones', {
+			"id": id,
+			"action": "pagar"
+		}, function(data){
+			if (fn.after != undefined)
+				fn.after(data);
+				
+			if (data.band == 'false'){
+				console.log("Error al establecer como pagada la infracción");
+			}
+		}, "json");
+	};
+
+	
 	this.getCarta = function(id, fn){
 		if (fn.before != undefined) fn.before();
 		
