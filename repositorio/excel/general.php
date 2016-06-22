@@ -54,7 +54,7 @@ class RGeneral{
 	}
 	
 	public function generar($datos){
-		$hoja =& $this->libro->addWorksheet('Reporte');
+		$hoja = &$this->libro->addWorksheet();
 		
 		$head = &$this->libro->addFormat(array('Size' => 8,
 			'bold' => 1,
@@ -89,22 +89,20 @@ class RGeneral{
 		$hoja->write(4, 8, utf8_decode("Estado"), $titulo);
 		$hoja->write(4, 9, utf8_decode("Monto"), $titulo);
 		
-		$datos = &$this->libro->addFormat(array('Size' => 8,
+		$datosStyle = &$this->libro->addFormat(array('Size' => 8,
 			"border" => 1));
 		
-		$hoja->setColumn(4, 8, 30);
-		
-		$y = 6;
-		foreach($datos as $key => $obj){	
-			$hoja->write($y, 1, utf8_decode($obj['fecha']), $datos);
-			$hoja->write($y, 2, utf8_decode($obj['hora']), $datos);
-			$hoja->write($y, 3, utf8_decode($obj['departamento']), $datos);
-			$hoja->write($y, 4, utf8_decode($obj['condominio']), $datos);
-			$hoja->write($y, 5, utf8_decode($obj['inquilino']), $datos);
-			$hoja->write($y, 6, utf8_decode($obj['area']), $datos);
-			$hoja->write($y, 7, utf8_decode($obj['inciso']), $datos);
-			$hoja->write($y, 8, utf8_decode($obj['estado']), $datos);
-			$hoja->write($y, 9, utf8_decode($obj['monto']), $datos);
+		$y = 5;
+		foreach($datos as $obj){	
+			$hoja->write($y, 1, utf8_decode($obj['fecha']), $datosStyle);
+			$hoja->write($y, 2, utf8_decode($obj['hora']), $datosStyle);
+			$hoja->write($y, 3, utf8_decode($obj['claveDepto']), $datosStyle);
+			$hoja->write($y, 4, utf8_decode($obj['condominio']), $datosStyle);
+			$hoja->write($y, 5, utf8_decode($obj['inquilino']), $datosStyle);
+			$hoja->write($y, 6, utf8_decode($obj['area']), $datosStyle);
+			$hoja->write($y, 7, utf8_decode($obj['inciso']), $datosStyle);
+			$hoja->write($y, 8, utf8_decode($obj['estado']), $datosStyle);
+			$hoja->write($y, 9, utf8_decode($obj['monto']), $datosStyle);
 			$y++;
 		}
 				

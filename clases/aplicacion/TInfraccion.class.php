@@ -325,7 +325,7 @@ class TInfraccion{
 		else
 			$fin->add(new DateInterval("P1M"));
 		
-		$rs = $db->Execute("select count(*) as total from infraccion where idDepartamento = ".$this->departamento->getId()." and fecha between '".$inicio->format("Y-m-")."25' and '".$fin->format("Y-m-")."24' and idEstado = 2 and idArea = ".$this->area->getId()." and inciso = '".$this->getInciso()."' and not idInfraccion = '".$this->getId()."'");
+		$rs = $db->Execute("select count(*) as total from infraccion where idDepartamento = ".$this->departamento->getId()." and fecha between '".$inicio->format("Y-m-")."25' and '".$fin->format("Y-m-")."24' and idEstado in (2, 4) and idArea = ".$this->area->getId()." and inciso = '".$this->getInciso()."' and not idInfraccion = '".$this->getId()."'");
 		
 		switch($rs->fields['total']){
 			case 0: #es la primera vez

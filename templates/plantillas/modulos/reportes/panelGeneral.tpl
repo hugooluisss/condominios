@@ -16,7 +16,7 @@
 				</div>
 				<div class="col-lg-2">
 					<div class="input-group date">
-						<input class="form-control" id="txtFecha" name="txtFechaFin" value="{$smarty.now|date_format:"%Y-%m-%d"}" />
+						<input class="form-control" id="txtFechaFin" name="txtFechaFin" value="{$smarty.now|date_format:"%Y-%m-%d"}" />
 					</div>
 				</div>
 				<label for="selEstado" class="col-lg-2">Estado</label>
@@ -53,6 +53,7 @@
 				<div class="col-lg-12 text-right">
 					<input type="submit" class="btn btn-info" value="Filtrar" />
 					<input type="button" class="btn btn-success" value="Excel" id="btnExcel"/>
+					<input type="button" class="btn btn-success" value="PDF" id="btnPDF"/>
 				</div>
 			</div>
 		</form>

@@ -10,6 +10,10 @@ $(document).ready(function(){
 		getExcel();
 	});
 	
+	$("#btnPDF").click(function(){
+		getPDF();
+	});
+	
 	$("#frmAdd").validate({
 		debug: true,
 		rules: {
@@ -75,14 +79,29 @@ $(document).ready(function(){
 			"area": $("#selArea").val(),
 			"action": "generalExcel"
 		}, function( data ) {
-			$("#dvLista").html(data);
-			
 			if (data.doc == "")
 				alert("Error al generar el reporte");
 			else{
 				location.href = data.doc;
 			}
-		});
+		}, "json");
+	};
+	
+	function getPDF(){
+		$.post("creportes", {
+			"fechaInicio": $("#txtFecha").val(),
+			"fechaFin": $("#txtFechaFin").val(),
+			"estado": $("#selEstado").val(),
+			"departamento": $("#selDepartamento").val(),
+			"area": $("#selArea").val(),
+			"action": "generalPDF"
+		}, function( data ) {
+			if (data.doc == "")
+				alert("Error al generar el reporte");
+			else{
+				openDocumento(data.doc);
+			}
+		}, "json");
 	};
 	
 	var ventana = new Object;

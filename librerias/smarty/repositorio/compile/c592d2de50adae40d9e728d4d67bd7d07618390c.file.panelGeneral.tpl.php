@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-06-21 21:56:05
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-21 23:05:27
          compiled from "templates/plantillas/modulos/reportes/panelGeneral.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:5612166305769fd1b9ac088-80281321%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c592d2de50adae40d9e728d4d67bd7d07618390c' => 
     array (
       0 => 'templates/plantillas/modulos/reportes/panelGeneral.tpl',
-      1 => 1466564164,
+      1 => 1466568325,
       2 => 'file',
     ),
   ),
@@ -46,7 +46,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div>
 				<div class="col-lg-2">
 					<div class="input-group date">
-						<input class="form-control" id="txtFecha" name="txtFechaFin" value="<?php echo smarty_modifier_date_format(time(),"%Y-%m-%d");?>
+						<input class="form-control" id="txtFechaFin" name="txtFechaFin" value="<?php echo smarty_modifier_date_format(time(),"%Y-%m-%d");?>
 " />
 					</div>
 				</div>
@@ -105,6 +105,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 				<div class="col-lg-12 text-right">
 					<input type="submit" class="btn btn-info" value="Filtrar" />
 					<input type="button" class="btn btn-success" value="Excel" id="btnExcel"/>
+					<input type="button" class="btn btn-success" value="PDF" id="btnPDF"/>
 				</div>
 			</div>
 		</form>
