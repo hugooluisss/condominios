@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-06-21 23:05:27
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-22 09:36:52
          compiled from "templates/plantillas/modulos/reportes/panelGeneral.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:5612166305769fd1b9ac088-80281321%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c592d2de50adae40d9e728d4d67bd7d07618390c' => 
     array (
       0 => 'templates/plantillas/modulos/reportes/panelGeneral.tpl',
-      1 => 1466568325,
+      1 => 1466603771,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5769fd1ba9dc90_01953851')) {function content_5769fd1ba9dc90_01953851($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Library/WebServer/Documents/condominios/librerias/smarty/plugins/modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_5769fd1ba9dc90_01953851')) {function content_5769fd1ba9dc90_01953851($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Library/WebServer/Documents/condominios2/librerias/smarty/plugins/modifier.date_format.php';
 ?><div class="row">
 	<div class="col-lg-12">
 		<h1 class="page-header">Reporte general de infracciones</h1>
