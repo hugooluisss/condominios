@@ -17,6 +17,19 @@ $(document).ready(function(){
 		autoclose: true
 	});
 	
+	$("#selArea").change(function(){
+		$('#selInciso').find('option').remove();
+		
+		var incisos = $("#selArea option:selected").attr("incisos") == ''?1:$("#selArea option:selected").attr("incisos");
+		console.log(incisos);
+		for(x = 1; x <= incisos ; x++){
+			$('#selInciso').append($("<option />", {
+				value: x,
+				text: x
+			}));
+		}
+	});
+	
 	$('#txtHora').timepicker();
 	
 	$("#panelTabs li a[href=#add]").click(function(){
@@ -37,9 +50,9 @@ $(document).ready(function(){
 			txtHora: "required",
 			txtDepartamento: "required",
 			selArea: "required",
-			txtInciso: "required",
-			txtServidor: "required",
-			txtCamara: "required"
+			selInciso: "required",
+			selServidor: "required",
+			selCamara: "required"
 		},
 		wrapper: 'span', 
 		submitHandler: function(form){
@@ -50,10 +63,10 @@ $(document).ready(function(){
 				$("#selArea").val(),
 				$("#txtFecha").val(),
 				$("#txthora").val(),
-				$("#txtServidor").val(),
-				$("#txtCamara").val(),
+				$("#selServidor").val(),
+				$("#selCamara").val(),
 				$("#txtDescripcion").val(),
-				$("#txtInciso").val(),
+				$("#selInciso").val(),
 				{
 					after: function(datos){
 						if (datos.band){
@@ -83,10 +96,23 @@ $(document).ready(function(){
 				$("#txtDepartamento").attr("identificador", el.idDepartamento);
 				$("#txtDepartamento").val(el.clave  + " " + el.condominio + " - " + el.inquilino);
 				$("#selArea").val(el.idArea);
+				
+				$('#selInciso').find('option').remove();
+		
+				var incisos = $("#selArea option:selected").attr("incisos") == ''?1:$("#selArea option:selected").attr("incisos");
+				console.log(incisos);
+				for(x = 1; x <= incisos ; x++){
+					$('#selInciso').append($("<option />", {
+						value: x,
+						text: x
+					}));
+				}
+				
+				
 				$("#txtHora").val(el.hora);
-				$("#txtInciso").val(el.inciso);
-				$("#txtServidor").val(el.servidor);
-				$("#txtCamara").val(el.camara);
+				$("#selInciso").val(el.inciso);
+				$("#selServidor").val(el.servidor);
+				$("#selCamara").val(el.camara);
 				$("#txtDescripcion").val(el.descripcion);
 				
 				$('#panelTabs a[href="#add"]').tab('show');

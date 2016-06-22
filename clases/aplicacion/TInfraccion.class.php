@@ -317,6 +317,9 @@ class TInfraccion{
 		$now = new DateTime;
 		$inicio = new DateTime;
 		$fin = new DateTime;
+		$rs = $db->Execute("select valor from configuracion where clave = 'costoMantenimiento'");
+		$costo = $rs->fields['valor'] == ''?0:$rs->fields['valor'];
+		
 		if ($now->format("d") < 25)
 			$inicio->sub(new DateInterval("P1M"));
 		else
@@ -327,15 +330,15 @@ class TInfraccion{
 		switch($rs->fields['total']){
 			case 0: #es la primera vez
 				$this->ocasion = 1;
-				$this->monto = $this->area->getCuota() * .1;
+				$this->monto = $costo * .1;
 			break;
 			case 1: #con esta sería la segunda vez
 				$this->ocasion = 2;
-				$this->monto = $this->area->getCuota() * .5;
+				$this->monto = $costo * .5;
 			break;
 			default:
 				$this->ocasion = $rs->fields['total'] + 1;
-				$this->monto = $this->area->getCuota();
+				$this->monto = $costo;
 		}
 		
 		return true;

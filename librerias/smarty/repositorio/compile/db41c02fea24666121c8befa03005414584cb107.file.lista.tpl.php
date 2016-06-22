@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-06-17 22:29:24
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-21 20:16:54
          compiled from "templates/plantillas/modulos/areas/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:14421286025764101f4c40a9-54411282%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'db41c02fea24666121c8befa03005414584cb107' => 
     array (
       0 => 'templates/plantillas/modulos/areas/lista.tpl',
-      1 => 1466190555,
+      1 => 1466554258,
       2 => 'file',
     ),
   ),
@@ -31,7 +31,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<tr>
 					<th>#</th>
 					<th>Nombre</th>
-					<th>Cuota</th>
+					<th>Incisos</th>
 					<th>&nbsp;</th>
 				</tr>
 			</thead>
@@ -46,7 +46,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 </td>
 						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
 </td>
-						<td class="text-right"><?php echo $_smarty_tpl->tpl_vars['row']->value['cuota'];?>
+						<td class="text-right"><?php echo $_smarty_tpl->tpl_vars['row']->value['incisos'];?>
 </td>
 						<td style="text-align: right">
 							<button type="button" class="btn btn-success" action="modificar" title="Modificar" datos='<?php echo $_smarty_tpl->tpl_vars['row']->value['json'];?>

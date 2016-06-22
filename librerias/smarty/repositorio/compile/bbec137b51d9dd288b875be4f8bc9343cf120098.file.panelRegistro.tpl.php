@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-06-17 23:30:12
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-21 20:28:47
          compiled from "templates/plantillas/modulos/infracciones/panelRegistro.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:18101457755764c013cb3773-50674229%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bbec137b51d9dd288b875be4f8bc9343cf120098' => 
     array (
       0 => 'templates/plantillas/modulos/infracciones/panelRegistro.tpl',
-      1 => 1466224211,
+      1 => 1466558922,
       2 => 'file',
     ),
   ),
@@ -21,6 +21,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'areas' => 0,
     'row' => 0,
+    'i' => 0,
     'PAGE' => 0,
   ),
   'has_nocache_code' => false,
@@ -88,6 +89,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars[
 $_smarty_tpl->tpl_vars["row"]->_loop = true;
 ?>
 									<option value="<?php echo $_smarty_tpl->tpl_vars['row']->value['idArea'];?>
+" incisos="<?php echo $_smarty_tpl->tpl_vars['row']->value['incisos'];?>
 "><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
 
 								<?php } ?>
@@ -95,21 +97,39 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="txtInciso" class="col-lg-2">Inciso</label>
+						<label for="selInciso" class="col-lg-2">Inciso</label>
 						<div class="col-lg-2">
-							<input class="form-control" id="txtInciso" name="txtInciso" value="">
+							<select class="form-control" id="selInciso" name="selInciso"></select>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="txtServidor" class="col-lg-2">Servidor</label>
+						<label for="selServidor" class="col-lg-2">Servidor</label>
 						<div class="col-lg-2">
-							<input class="form-control" id="txtServidor" name="txtServidor" value="">
+							<select class="form-control" id="selServidor" name="selServidor">
+								<?php $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int)ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? 4+1 - (1) : 1-(4)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
+if ($_smarty_tpl->tpl_vars['i']->total > 0){
+for ($_smarty_tpl->tpl_vars['i']->value = 1, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++){
+$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration == $_smarty_tpl->tpl_vars['i']->total;?>
+								<option value="<?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+
+								<?php }} ?>
+							</select>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="txtCamara" class="col-lg-2">Cámara</label>
+						<label for="selCamara" class="col-lg-2">Cámara</label>
 						<div class="col-lg-2">
-							<input class="form-control" id="txtCamara" name="txtCamara" value="">
+							<select class="form-control" id="selCamara" name="selCamara">
+								<?php $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int)ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? 32+1 - (1) : 1-(32)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
+if ($_smarty_tpl->tpl_vars['i']->total > 0){
+for ($_smarty_tpl->tpl_vars['i']->value = 1, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++){
+$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration == $_smarty_tpl->tpl_vars['i']->total;?>
+								<option value="<?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['i']->value;?>
+
+								<?php }} ?>
+							</select>
 						</div>
 					</div>
 					<div class="form-group">

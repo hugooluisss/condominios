@@ -103,6 +103,7 @@
 						<ul class="treeview-menu">
 							<li {if $PAGE.modulo eq 'admonUsuarios'}class="active"{/if}><a href="admonUsuarios"><i class="fa fa-users"></i> Usuarios</a></li>
 							<li {if $PAGE.modulo eq 'estados'}class="active"{/if}><a href="estados"><i class="fa fa-bookmark"></i> Estados</a></li>
+							<li {if $PAGE.modulo eq 'configuracion'}class="active"{/if}><a href="configuracion"><i class="fa fa-server"></i> Configuración</a></li>
 						</ul>
 					</li>
 					{/if}

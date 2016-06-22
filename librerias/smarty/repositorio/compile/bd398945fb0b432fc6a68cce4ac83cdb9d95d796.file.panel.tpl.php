@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-06-20 12:47:44
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-21 20:16:52
          compiled from "templates/plantillas/modulos/areas/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:7252802115764101eb6a2d7-94823047%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bd398945fb0b432fc6a68cce4ac83cdb9d95d796' => 
     array (
       0 => 'templates/plantillas/modulos/areas/panel.tpl',
-      1 => 1466190555,
+      1 => 1466554258,
       2 => 'file',
     ),
   ),
@@ -48,9 +48,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="txtCuota" class="col-lg-2">Cuota</label>
+						<label for="txtIncisos" class="col-lg-2">Incisos</label>
 						<div class="col-lg-2">
-							<input class="form-control" id="txtCuota" name="txtCuota" value="0.00">
+							<input class="form-control" id="txtIncisos" name="txtIncisos" value="1">
 						</div>
 					</div>
 				</div>

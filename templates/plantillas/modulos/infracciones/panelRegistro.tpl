@@ -53,27 +53,35 @@
 							<select class="form-control" id="selArea" name="selArea">
 								<option value="">Selecciona de la lista
 								{foreach from=$areas item="row"}
-									<option value="{$row.idArea}">{$row.nombre}
+									<option value="{$row.idArea}" incisos="{$row.incisos}">{$row.nombre}
 								{/foreach}
 							</select>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="txtInciso" class="col-lg-2">Inciso</label>
+						<label for="selInciso" class="col-lg-2">Inciso</label>
 						<div class="col-lg-2">
-							<input class="form-control" id="txtInciso" name="txtInciso" value="">
+							<select class="form-control" id="selInciso" name="selInciso"></select>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="txtServidor" class="col-lg-2">Servidor</label>
+						<label for="selServidor" class="col-lg-2">Servidor</label>
 						<div class="col-lg-2">
-							<input class="form-control" id="txtServidor" name="txtServidor" value="">
+							<select class="form-control" id="selServidor" name="selServidor">
+								{for $i=1 to 4}
+								<option value="{$i}">{$i}
+								{/for}
+							</select>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="txtCamara" class="col-lg-2">Cámara</label>
+						<label for="selCamara" class="col-lg-2">Cámara</label>
 						<div class="col-lg-2">
-							<input class="form-control" id="txtCamara" name="txtCamara" value="">
+							<select class="form-control" id="selCamara" name="selCamara">
+								{for $i=1 to 32}
+								<option value="{$i}">{$i}
+								{/for}
+							</select>
 						</div>
 					</div>
 					<div class="form-group">

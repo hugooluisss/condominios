@@ -219,12 +219,28 @@ $conf['listaPorPagar'] = array(
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
 	
+#Configuracion
+$conf['configuracion'] = array(
+	'controlador' => 'configuracion.php',
+	'vista' => 'configuracion.tpl',
+	'descripcion' => 'Configuración del sistema',
+	'seguridad' => true,
+	'jsTemplate' => array('configuracion.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['cconfiguracion'] = array(
+	'controlador' => 'configuracion.php',
+	'descripcion' => 'Controlador de configuración del sistema',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+	
 #Reportes
 $conf['reporteGeneral'] = array(
 	'controlador' => 'reportes.php',
 	'vista' => 'reportes/panelGeneral.tpl',
 	'descripcion' => 'Filtro general para la generación de reportes',
 	'seguridad' => true,
+	'js' => array('infraccion.class.js'),
 	'jsTemplate' => array('reporteGeneral.js'),
 	'capa' => LAYOUT_DEFECTO);
 	

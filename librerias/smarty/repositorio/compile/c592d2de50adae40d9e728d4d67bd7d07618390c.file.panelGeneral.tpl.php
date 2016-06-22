@@ -1,4 +1,33 @@
-<div class="row">
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-21 21:56:05
+         compiled from "templates/plantillas/modulos/reportes/panelGeneral.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:5612166305769fd1b9ac088-80281321%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'c592d2de50adae40d9e728d4d67bd7d07618390c' => 
+    array (
+      0 => 'templates/plantillas/modulos/reportes/panelGeneral.tpl',
+      1 => 1466564164,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '5612166305769fd1b9ac088-80281321',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_5769fd1ba9dc90_01953851',
+  'variables' => 
+  array (
+    'estados' => 0,
+    'row' => 0,
+    'departamentos' => 0,
+    'areas' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5769fd1ba9dc90_01953851')) {function content_5769fd1ba9dc90_01953851($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Library/WebServer/Documents/condominios/librerias/smarty/plugins/modifier.date_format.php';
+?><div class="row">
 	<div class="col-lg-12">
 		<h1 class="page-header">Reporte general de infracciones</h1>
 	</div>
@@ -11,21 +40,30 @@
 				<label for="txtFecha" class="col-lg-2">Fecha</label>
 				<div class="col-lg-2">
 					<div class="input-group date">
-						<input class="form-control" id="txtFecha" name="txtFecha" value="{$smarty.now|date_format:"%Y-%m-%d"}" />
+						<input class="form-control" id="txtFecha" name="txtFecha" value="<?php echo smarty_modifier_date_format(time(),"%Y-%m-%d");?>
+" />
 					</div>
 				</div>
 				<div class="col-lg-2">
 					<div class="input-group date">
-						<input class="form-control" id="txtFecha" name="txtFechaFin" value="{$smarty.now|date_format:"%Y-%m-%d"}" />
+						<input class="form-control" id="txtFecha" name="txtFechaFin" value="<?php echo smarty_modifier_date_format(time(),"%Y-%m-%d");?>
+" />
 					</div>
 				</div>
 				<label for="selEstado" class="col-lg-2">Estado</label>
 				<div class="col-lg-3">
 					<select class="form-control" id="selEstado" name="selEstado">
 						<option value="%">Cualquier estado
-						{foreach from=$estados item="row"}
-							<option value="{$row.idEstado}" style="color: {$row.color}">{$row.nombre}
-						{/foreach}
+						<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['estados']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
+$_smarty_tpl->tpl_vars["row"]->_loop = true;
+?>
+							<option value="<?php echo $_smarty_tpl->tpl_vars['row']->value['idEstado'];?>
+" style="color: <?php echo $_smarty_tpl->tpl_vars['row']->value['color'];?>
+"><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
+
+						<?php } ?>
 					</select>
 				</div>
 			</div>
@@ -34,18 +72,32 @@
 				<div class="col-lg-4">
 					<select class="form-control" id="selDepartamento" name="selDepartamento">
 						<option value="%">Cualquiera
-						{foreach from=$departamentos item="row"}
-							<option value="{$row.idDepartamento}">{$row.clave} {$row.condominio} - {$row.inquilino}
-						{/foreach}
+						<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['departamentos']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
+$_smarty_tpl->tpl_vars["row"]->_loop = true;
+?>
+							<option value="<?php echo $_smarty_tpl->tpl_vars['row']->value['idDepartamento'];?>
+"><?php echo $_smarty_tpl->tpl_vars['row']->value['clave'];?>
+ <?php echo $_smarty_tpl->tpl_vars['row']->value['condominio'];?>
+ - <?php echo $_smarty_tpl->tpl_vars['row']->value['inquilino'];?>
+
+						<?php } ?>
 					</select>
 				</div>
 				<label for="selArea" class="col-lg-2">Área/Reglamento</label>
 				<div class="col-lg-3">
 					<select class="form-control" id="selArea" name="selArea">
 						<option value="%">Cualquier área/reglamento
-						{foreach from=$areas item="row"}
-							<option value="{$row.idArea}">{$row.nombre}
-						{/foreach}
+						<?php  $_smarty_tpl->tpl_vars["row"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["row"]->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['areas']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
+$_smarty_tpl->tpl_vars["row"]->_loop = true;
+?>
+							<option value="<?php echo $_smarty_tpl->tpl_vars['row']->value['idArea'];?>
+"><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
+
+						<?php } ?>
 					</select>
 				</div>
 			</div>
@@ -136,4 +188,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div><?php }} ?>

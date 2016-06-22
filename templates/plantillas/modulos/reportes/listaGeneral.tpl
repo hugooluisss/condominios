@@ -18,7 +18,7 @@
 				<td>{$row.inquilino}</td>
 				<td>{$row.area} / {$row.inciso}</td>
 				<td style="text-align: right">
-					<button type="button" class="btn btn-default" action="autorizar" title="Autorizar" datos='{$row.json}'><i class="fa fa-file-pdf-o"></i></button>
+					<button type="button" class="btn btn-default" action="detalle" title="Detalle" datos='{$row.json}'><i class="fa fa-keyboard-o"></i></button>
 				</td>
 			</tr>
 		{/foreach}
