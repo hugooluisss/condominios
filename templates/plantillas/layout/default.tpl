@@ -239,7 +239,7 @@
     <script src="{$PAGE.ruta}dist/js/app.js" type="text/javascript"></script>
     
     {foreach from=$PAGE.scriptsJS item=script}
-		<script type="text/javascript" src="{$script}"></script>
+		<script type="text/javascript" src="{$script}?m={rand()}"></script>
 	{/foreach}
     
     {if $PAGE.debug}

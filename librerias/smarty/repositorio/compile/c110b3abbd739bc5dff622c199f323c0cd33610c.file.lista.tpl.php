@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-06-18 09:43:46
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-23 10:27:42
          compiled from "templates/plantillas/modulos/departamentos/lista.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:80780369857642dbf8023a6-28992760%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c110b3abbd739bc5dff622c199f323c0cd33610c' => 
     array (
       0 => 'templates/plantillas/modulos/departamentos/lista.tpl',
-      1 => 1466190555,
+      1 => 1466603771,
       2 => 'file',
     ),
   ),
@@ -29,8 +29,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<table id="tblLista" class="table table-bordered table-hover">
 			<thead>
 				<tr>
-					<th>#</th>
-					<th>Clave</th>
+					<th>Departamento</th>
 					<th>Condominio</th>
 					<th>Inquilino</th>
 					<th>&nbsp;</th>
@@ -43,8 +42,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars[
 $_smarty_tpl->tpl_vars["row"]->_loop = true;
 ?>
 					<tr>
-						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['idDepartamento'];?>
-</td>
 						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['clave'];?>
 </td>
 						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['condominio'];?>

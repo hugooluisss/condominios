@@ -169,6 +169,32 @@ switch($objModulo->getId()){
 
 				print json_encode($result);
 			break;
+			case 'sendMail':
+				$infraccion = new TInfraccion($_POST["id"]);
+				
+				if ($infraccion->departamento->getCorreo() == '')
+					echo json_encode(array("band" => false, "email" => ""));
+				else{
+					$email = new TMail;
+					$email->setTema("Infracción");
+					$correos = array();
+					foreach(explode(",", $infraccion->departamento->getCorreo()) as $correo){
+						foreach(explode(" ", $correo) as $correo2){
+							if ($correo2 <> ''){
+								array_push($correos, $correo2);
+								$email->setDestino($correo2, utf8_decode($infraccion->departamento->getInquilino()));
+							}
+						}
+					}
+					
+					$email->adjuntar($_POST['pdf']);
+					$datos = array();
+					$datos['inquilino'] = $infraccion->departamento->getInquilino();
+					
+					$email->setBodyHTML(utf8_decode($email->construyeMail(file_get_contents("repositorio/email/autorizada.txt"), $datos)));
+					echo json_encode(array("band" => $email->send(), "email" => $infraccion->departamento->getCorreo(), "correos" => $correos));
+				}
+			break;
 		}
 	break;
 }

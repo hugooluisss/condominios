@@ -137,4 +137,26 @@ TInfraccion = function(){
 				
 		}, "json");
 	}
+	
+	this.sendMail = function(id, fn){
+		if (fn.before != undefined) fn.before();
+		
+		this.getCarta(id, {
+			after: function(resp){
+				if (resp.band){
+					$.post("cinfracciones", {
+						"action": "sendMail",
+						"pdf": resp.doc,
+						"id": id
+					}, function(resp){
+						if (fn.after != undefined) fn.after(resp);
+						
+						if (!resp.band)
+							console.log("Ocurrió un error al enviar el documento");
+					}, "json");
+				}else
+					console.log("El documento no se generó");
+			}
+		});
+	}
 };

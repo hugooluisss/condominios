@@ -114,6 +114,14 @@ $(document).ready(function(){
 					if (resp.band){
 						getLista();
 						$("#winAutorizar").modal("hide");
+						
+						if (confirm("¿Deseas enviarla por correo electrónico al infractor?"))
+							obj.sendMail($("#id").val(), {
+								after: function(resp){
+									if (!resp.band)
+										alert("El correo no pudo ser enviado a la(s) cuenta(s) " + resp.email);
+								}
+							});
 					}else
 						alert("Ups... no se pudo aplicar");
 				}

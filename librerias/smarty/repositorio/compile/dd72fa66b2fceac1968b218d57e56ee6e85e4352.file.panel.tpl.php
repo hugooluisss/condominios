@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-06-18 09:43:45
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-23 10:27:41
          compiled from "templates/plantillas/modulos/departamentos/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:49545437157642dbde2c2f1-61771384%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dd72fa66b2fceac1968b218d57e56ee6e85e4352' => 
     array (
       0 => 'templates/plantillas/modulos/departamentos/panel.tpl',
-      1 => 1466190555,
+      1 => 1466603771,
       2 => 'file',
     ),
   ),
@@ -42,21 +42,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<div class="box">
 				<div class="box-body">
 					<div class="form-group">
-						<label for="txtClave" class="col-lg-2">Clave</label>
+						<label for="txtClave" class="col-lg-2">Departamento</label>
 						<div class="col-lg-4">
 							<input class="form-control" id="txtClave" name="txtClave" maxlength="10">
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="txtCondominio" class="col-lg-2">Condominio <small>(Clave)</small></label>
+						<label for="txtCondominio" class="col-lg-2">Condominio</label>
 						<div class="col-lg-8">
 							<input class="form-control" id="txtCondominio" name="txtCondominio" value="" placeholder="">
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="txtUbicacion" class="col-lg-2">Ubicación</label>
-						<div class="col-lg-8">
-							<input class="form-control" id="txtUbicacion" name="txtUbicacion" value="">
 						</div>
 					</div>
 					<div class="form-group">
@@ -67,7 +61,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					</div>
 					<div class="form-group">
 						<label for="txtCorreo" class="col-lg-2">Correo</label>
-						<div class="col-lg-2">
+						<div class="col-lg-4">
 							<input class="form-control" id="txtCorreo" name="txtCorreo" value="">
 						</div>
 					</div>
