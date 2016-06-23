@@ -66,6 +66,19 @@ switch($objModulo->getId()){
 		}
 		$smarty->assign("lista", $datos);
 	break;
+	case 'listaInfraccionesReactivar':
+		$db = TBase::conectaDB();
+		
+		$rs = $db->Execute("select *, b.clave as claveDepto, c.nombre as area, d.nombre as estado from infraccion a join departamento b using(idDepartamento) join area c using(idArea) join estado d using(idEstado) where idEstado in (2, 3, 4)");
+		$datos = array();
+		while(!$rs->EOF){
+			$rs->fields['json'] = json_encode($rs->fields);
+			array_push($datos, $rs->fields);
+			
+			$rs->moveNext();
+		}
+		$smarty->assign("lista", $datos);
+	break;
 	case 'listaImagenes':
 		$directorio = scandir($repositorio.$_GET['infraccion'].'/');
 		$imgs = array();
@@ -121,6 +134,11 @@ switch($objModulo->getId()){
 			case 'pagar':
 				$obj = new TInfraccion($_POST['id']);
 				$obj->estado->setId(4);
+				echo json_encode(array("band" => $obj->guardar()));
+			break;
+			case 'registrada':
+				$obj = new TInfraccion($_POST['id']);
+				$obj->estado->setId(1);
 				echo json_encode(array("band" => $obj->guardar()));
 			break;
 			case 'upload':

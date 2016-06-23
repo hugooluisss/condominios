@@ -256,4 +256,20 @@ $conf['creportes'] = array(
 	'descripcion' => 'Controlador de reportes',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+$conf['reactivarInfracciones'] = array(
+	'controlador' => 'infracciones.php',
+	'vista' => 'infracciones/panelReactivar.tpl',
+	'descripcion' => 'Para dejar infracciones rechazadas, autorizadas o pagadas en estado de registro',
+	'seguridad' => true,
+	'js' => array('infraccion.class.js'),
+	'jsTemplate' => array('reactivarInfracciones.js'),
+	'capa' => LAYOUT_DEFECTO);
+
+$conf['listaInfraccionesReactivar'] = array(
+	'controlador' => 'infracciones.php',
+	'vista' => 'infracciones/listaReactivar.tpl',
+	'descripcion' => 'Lista de infracciones para reactivar',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
 ?>

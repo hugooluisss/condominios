@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-06-22 09:36:48
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-23 09:28:05
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1409721575573e9dd2cda5f9-70823435%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1466603771,
+      1 => 1466692083,
       2 => 'file',
     ),
   ),
@@ -164,7 +164,7 @@ plugins/upload/css/jquery.fileupload.css">
 						</ul>
 					</li>
 					<?php }?>
-					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('registroInfracciones','autorizarInfracciones','pagarInfraccion'))){?>active<?php }?> treeview">
+					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('registroInfracciones','autorizarInfracciones','pagarInfraccion','reactivarInfracciones'))){?>active<?php }?> treeview">
 						<a href="#">
 							<span>Infracciones</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
@@ -177,6 +177,9 @@ plugins/upload/css/jquery.fileupload.css">
 							<?php }?>
 							<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getIdTipo(),array(1,4))){?>
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='pagarInfraccion'){?>class="active"<?php }?>><a href="pagarInfraccion"><i class="fa fa-money"></i> Pagar</a></li>
+							<?php }?>
+							<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getIdTipo(),array(1,4))){?>
+							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='reactivarInfracciones'){?>class="active"<?php }?>><a href="reactivarInfracciones"><i class="fa fa-circle-o-notch"></i> Reactivar</a></li>
 							<?php }?>
 						</ul>
 					</li>

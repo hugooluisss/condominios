@@ -118,7 +118,7 @@
 						</ul>
 					</li>
 					{/if}
-					<li class="{if in_array($PAGE.modulo, array('registroInfracciones', 'autorizarInfracciones', 'pagarInfraccion'))}active{/if} treeview">
+					<li class="{if in_array($PAGE.modulo, array('registroInfracciones', 'autorizarInfracciones', 'pagarInfraccion', 'reactivarInfracciones'))}active{/if} treeview">
 						<a href="#">
 							<span>Infracciones</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
@@ -131,6 +131,9 @@
 							{/if}
 							{if in_array($PAGE.usuario->getIdTipo(), array(1, 4))}
 							<li {if $PAGE.modulo eq 'pagarInfraccion'}class="active"{/if}><a href="pagarInfraccion"><i class="fa fa-money"></i> Pagar</a></li>
+							{/if}
+							{if in_array($PAGE.usuario->getIdTipo(), array(1, 4))}
+							<li {if $PAGE.modulo eq 'reactivarInfracciones'}class="active"{/if}><a href="reactivarInfracciones"><i class="fa fa-circle-o-notch"></i> Reactivar</a></li>
 							{/if}
 						</ul>
 					</li>

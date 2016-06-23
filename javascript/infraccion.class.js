@@ -107,6 +107,20 @@ TInfraccion = function(){
 			}
 		}, "json");
 	};
+	
+	this.setRegistrada = function(id, fn){
+		$.post('cinfracciones', {
+			"id": id,
+			"action": "registrada"
+		}, function(data){
+			if (fn.after != undefined)
+				fn.after(data);
+				
+			if (data.band == 'false'){
+				console.log("Error al establecer como registrada la infracción");
+			}
+		}, "json");
+	};
 
 	
 	this.getCarta = function(id, fn){
