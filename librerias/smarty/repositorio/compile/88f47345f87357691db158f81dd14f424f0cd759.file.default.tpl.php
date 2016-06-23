@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-06-23 11:48:43
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-23 12:51:16
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1409721575573e9dd2cda5f9-70823435%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1466700116,
+      1 => 1466704274,
       2 => 'file',
     ),
   ),
@@ -142,7 +142,7 @@ plugins/upload/css/jquery.fileupload.css">
 				<ul class="sidebar-menu">
 					<li class="header">MENÚ PRINCIPAL</li>
 					<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getIdTipo()==1){?>
-					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('admonUsuarios','estados'))){?>active<?php }?> treeview">
+					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('admonUsuarios','estados','configuracion','respaldos'))){?>active<?php }?> treeview">
 						<a href="#">
 							<span>Administración</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
@@ -150,6 +150,7 @@ plugins/upload/css/jquery.fileupload.css">
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='admonUsuarios'){?>class="active"<?php }?>><a href="admonUsuarios"><i class="fa fa-users"></i> Usuarios</a></li>
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='estados'){?>class="active"<?php }?>><a href="estados"><i class="fa fa-bookmark"></i> Estados</a></li>
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='configuracion'){?>class="active"<?php }?>><a href="configuracion"><i class="fa fa-server"></i> Configuración</a></li>
+							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='respaldos'){?>class="active"<?php }?>><a href="respaldos"><i class="fa fa-database"></i> Respaldos</a></li>
 						</ul>
 					</li>
 					<?php }?>

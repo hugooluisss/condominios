@@ -272,4 +272,19 @@ $conf['listaInfraccionesReactivar'] = array(
 	'descripcion' => 'Lista de infracciones para reactivar',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+
+#Respaldos
+$conf['respaldos'] = array(
+	'controlador' => 'respaldo.php',
+	'vista' => 'respaldos/panel.tpl',
+	'descripcion' => 'Generación de respaldos',
+	'seguridad' => true,
+	'jsTemplate' => array('respaldos.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['crespaldos'] = array(
+	'controlador' => 'respaldo.php',
+	'descripcion' => 'Controlador de respaldos',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
 ?>

@@ -96,7 +96,7 @@
 				<ul class="sidebar-menu">
 					<li class="header">MENÚ PRINCIPAL</li>
 					{if $PAGE.usuario->getIdTipo() eq 1}
-					<li class="{if in_array($PAGE.modulo, array('admonUsuarios', 'estados'))}active{/if} treeview">
+					<li class="{if in_array($PAGE.modulo, array('admonUsuarios', 'estados', 'configuracion', 'respaldos'))}active{/if} treeview">
 						<a href="#">
 							<span>Administración</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
@@ -104,6 +104,7 @@
 							<li {if $PAGE.modulo eq 'admonUsuarios'}class="active"{/if}><a href="admonUsuarios"><i class="fa fa-users"></i> Usuarios</a></li>
 							<li {if $PAGE.modulo eq 'estados'}class="active"{/if}><a href="estados"><i class="fa fa-bookmark"></i> Estados</a></li>
 							<li {if $PAGE.modulo eq 'configuracion'}class="active"{/if}><a href="configuracion"><i class="fa fa-server"></i> Configuración</a></li>
+							<li {if $PAGE.modulo eq 'respaldos'}class="active"{/if}><a href="respaldos"><i class="fa fa-database"></i> Respaldos</a></li>
 						</ul>
 					</li>
 					{/if}
