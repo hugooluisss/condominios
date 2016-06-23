@@ -12,9 +12,16 @@ $(document).ready(function(){
 			},
 			after: function(resp){
 				$("#btnCartaFicha").prop("disabled", false);
-				if (resp.band)
+				if (resp.band){
+					if (confirm("¿Deseas enviarla por correo electrónico al infractor?"))
+						obj.sendMail($("#id").val(), {
+							after: function(resp){
+								if (!resp.band)
+									alert("El correo no pudo ser enviado a la(s) cuenta(s) " + resp.email);
+							}
+						});
 					openDocumento(resp.doc);
-				else
+				}else
 					alert("Ups... el documento no se pudo generar");
 			}
 		});

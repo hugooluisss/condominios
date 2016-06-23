@@ -15,7 +15,7 @@ $(document).ready(function(){
 		rules: {
 			txtCondominio: "required",
 			txtInquilino: "required",
-			txtCorreo: "email",
+			//txtCorreo: "email",
 			txtReferencia: "required",
 			txtClave:{
 				required: true,
