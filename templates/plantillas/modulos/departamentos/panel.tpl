@@ -46,8 +46,8 @@
 					</div>
 					<div class="form-group">
 						<label for="txtReferencia" class="col-lg-2">Referencia</label>
-						<div class="col-lg-1">
-							<input class="form-control" id="txtReferencia" name="txtReferencia" value="">
+						<div class="col-lg-2">
+							<input class="form-control" id="txtReferencia" name="txtReferencia" value="" maxlength="4">
 						</div>
 					</div>
 				</div>

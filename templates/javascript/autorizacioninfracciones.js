@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	getLista();
 	var upload;
+	var infraccion;
 	
 	var ventana = new Object;
 	
@@ -33,7 +34,7 @@ $(document).ready(function(){
 			
 			$(".box .box-body").find("[action=autorizar]").click(function(){
 				var el = jQuery.parseJSON($(this).attr("datos"));
-				
+				infraccion = el;
 				$.each(el, function(key, value) {
 					$("#winAutorizar").find("[campo=" + key +"]").text(value);
 				});
@@ -68,6 +69,22 @@ $(document).ready(function(){
 			});
 		});
 	};
+	
+	$("#txtDescripcion").change(function(){
+		var obj = new TInfraccion;
+		
+		obj.registra(infraccion.idInfraccion, infraccion.idDepartamento, infraccion.idArea, infraccion.fecha, infraccion.hora, infraccion.servidor, infraccion.camara, $("#txtDescripcion").val(), infraccion.inciseo, {
+			before: function(){
+				$("#txtDescripcion").prop("disabled", true);
+			},
+			after: function(resp){
+				$("#txtDescripcion").prop("disabled", false);
+				
+				if (!resp.band)
+					alert("No se pudo actualizar la descripción");
+			}
+		});
+	});
 	
 	$('#fileupload').fileupload({
 			url: "?mod=cinfracciones&action=upload&infraccion=",

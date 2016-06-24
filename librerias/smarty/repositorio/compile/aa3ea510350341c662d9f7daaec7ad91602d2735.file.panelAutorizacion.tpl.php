@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-06-22 10:03:58
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-23 22:04:32
          compiled from "templates/plantillas/modulos/infracciones/panelAutorizacion.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:336383055576557cb5c4479-16071944%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:525022631576ca0e280daf9-56400472%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'aa3ea510350341c662d9f7daaec7ad91602d2735' => 
     array (
       0 => 'templates/plantillas/modulos/infracciones/panelAutorizacion.tpl',
-      1 => 1466603771,
+      1 => 1466737471,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '336383055576557cb5c4479-16071944',
+  'nocache_hash' => '525022631576ca0e280daf9-56400472',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_576557cb6a6b06_22741569',
+  'unifunc' => 'content_576ca0e284b962_71729915',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_576557cb6a6b06_22741569')) {function content_576557cb6a6b06_22741569($_smarty_tpl) {?><div class="row">
+<?php if ($_valid && !is_callable('content_576ca0e284b962_71729915')) {function content_576ca0e284b962_71729915($_smarty_tpl) {?><div class="row">
 	<div class="col-lg-12">
 		<h1 class="page-header">Autorizar / Rechazar infracciones</h1>
 	</div>
@@ -82,10 +82,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<div class="col-lg-2 text-right text-success">Cámara</div>
 					<div class="col-lg-4" campo="camara"></div>
 				</div>
-				<br />
 				<div class="row">
 					<div class="col-lg-2 text-right text-success">Descripción</div>
-					<div class="col-lg-10" campo="descripcion"></div>
+					<div class="col-lg-10">
+						<textarea id="txtDescripcion" value="txtDescripcion" campo="descripcion" class="form-control" rows="1"></textarea>
+					</div>
 				</div>
 				<br />
 				<div class="row">

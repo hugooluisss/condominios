@@ -14,8 +14,8 @@ $(document).ready(function(){
 		debug: true,
 		rules: {
 			txtCondominio: "required",
-			txtInquilino: "required",
-			//txtCorreo: "email",
+			//txtInquilino: "required",
+			txtCorreo: "required",
 			txtReferencia: "required",
 			txtClave:{
 				required: true,

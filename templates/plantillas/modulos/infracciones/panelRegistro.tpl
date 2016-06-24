@@ -68,7 +68,7 @@
 						<label for="selServidor" class="col-lg-2">Servidor</label>
 						<div class="col-lg-2">
 							<select class="form-control" id="selServidor" name="selServidor">
-								{for $i=1 to 4}
+								{for $i=1 to 3}
 								<option value="{$i}">{$i}
 								{/for}
 							</select>

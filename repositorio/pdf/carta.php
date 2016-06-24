@@ -85,7 +85,7 @@ class RCarta extends tFPDF{
 		$this->SetFont('Arial', 'B', 10); 
 		$this->Cell(50, 6, utf8_decode("NOMBRE:"), 0, 0, 'C');
 		$this->SetTextColor(255, 0, 0);
-		$this->Cell(0, 6, utf8_decode(strtoupper($infraccion->departamento->getInquilino())), 'B', 1, 'L');
+		$this->Cell(0, 6, utf8_decode(strtoupper($infraccion->departamento->getCondominio()." / ".$infraccion->departamento->getInquilino())), 'B', 1, 'L');
 		$this->SetTextColor(0);
 		$this->Ln(8);
 		$this->Cell(50, 6, utf8_decode("DEPARTAMENTO No: "), 0, 0, 'C');

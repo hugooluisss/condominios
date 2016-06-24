@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-06-23 09:14:31
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-23 21:53:18
          compiled from "templates/plantillas/modulos/infracciones/panelRegistro.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:18101457755764c013cb3773-50674229%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1601151507576ca09e150a34-25583194%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'bbec137b51d9dd288b875be4f8bc9343cf120098' => 
     array (
       0 => 'templates/plantillas/modulos/infracciones/panelRegistro.tpl',
-      1 => 1466603771,
+      1 => 1466736587,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '18101457755764c013cb3773-50674229',
+  'nocache_hash' => '1601151507576ca09e150a34-25583194',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_5764c013cf5f11_77755101',
   'variables' => 
   array (
     'areas' => 0,
@@ -25,8 +23,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'PAGE' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_576ca09e2023d5_18091318',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5764c013cf5f11_77755101')) {function content_5764c013cf5f11_77755101($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Library/WebServer/Documents/condominios2/librerias/smarty/plugins/modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_576ca09e2023d5_18091318')) {function content_576ca09e2023d5_18091318($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Library/WebServer/Documents/condominios/librerias/smarty/plugins/modifier.date_format.php';
 ?><div class="row">
 	<div class="col-lg-12">
 		<h1 class="page-header">Registro de infracciones</h1>
@@ -106,7 +106,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 						<label for="selServidor" class="col-lg-2">Servidor</label>
 						<div class="col-lg-2">
 							<select class="form-control" id="selServidor" name="selServidor">
-								<?php $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int)ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? 4+1 - (1) : 1-(4)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
+								<?php $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int)ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? 3+1 - (1) : 1-(3)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
 if ($_smarty_tpl->tpl_vars['i']->total > 0){
 for ($_smarty_tpl->tpl_vars['i']->value = 1, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++){
 $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration == $_smarty_tpl->tpl_vars['i']->total;?>

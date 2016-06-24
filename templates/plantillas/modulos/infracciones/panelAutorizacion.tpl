@@ -61,10 +61,11 @@
 					<div class="col-lg-2 text-right text-success">Cámara</div>
 					<div class="col-lg-4" campo="camara"></div>
 				</div>
-				<br />
 				<div class="row">
 					<div class="col-lg-2 text-right text-success">Descripción</div>
-					<div class="col-lg-10" campo="descripcion"></div>
+					<div class="col-lg-10">
+						<textarea id="txtDescripcion" value="txtDescripcion" campo="descripcion" class="form-control" rows="1"></textarea>
+					</div>
 				</div>
 				<br />
 				<div class="row">
