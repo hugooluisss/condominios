@@ -81,6 +81,15 @@ class TMail{
 	public function setDestino($mail, $nombre = ""){
 		$this->phpMailer->AddAddress($mail, $nombre);
 	}
+	
+/**
+* Agrega una direccion de correo para enviar de forma oculta
+* @param string $mail Direccion
+* @param string $nombre Nombre de la persona
+*/		
+	public function copiaOculta($mail, $nombre = ""){
+		$this->phpMailer->AddCC($mail, $nombre);
+	}
 
 /**
 * Envia el correo

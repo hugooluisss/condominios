@@ -182,14 +182,19 @@ switch($objModulo->getId()){
 						foreach(explode(" ", $correo) as $correo2){
 							if ($correo2 <> ''){
 								array_push($correos, $correo2);
-								$email->setDestino($correo2, utf8_decode($infraccion->departamento->getInquilino()));
+								$email->setDestino($correo2, utf8_decode($infraccion->departamento->getCondominio().' - '.$infraccion->departamento->getInquilino()));
 							}
 						}
 					}
 					
+					$db = TBase::conectaDB();
+					$rs = $db->Execute("select * from configuracion where clave = 'correoGerente'");
+					if ($rs->fields['valor'] <> '')
+						$email->copiaOculta($rs->fields['valor'], "Gerente");
+						
 					$email->adjuntar($_POST['pdf']);
 					$datos = array();
-					$datos['inquilino'] = $infraccion->departamento->getInquilino();
+					$datos['inquilino'] = $infraccion->departamento->getCondominio().' - '.$infraccion->departamento->getInquilino();
 					
 					$email->setBodyHTML(utf8_decode($email->construyeMail(file_get_contents("repositorio/email/autorizada.txt"), $datos)));
 					echo json_encode(array("band" => $email->send(), "email" => $infraccion->departamento->getCorreo(), "correos" => $correos));

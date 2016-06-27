@@ -29,7 +29,7 @@ class RCarta extends tFPDF{
 		$this->Cell(0, 6, utf8_decode("SANCIÓN OCASIONAL #".$infraccion->getOcasion()), 0, 1, 'C');
 		$this->Ln(10);
 		$this->Cell(0, 6, utf8_decode("RESIDENCIAL TAMARINDOS 130 P. EN C."), 0, 1, 'L');
-		$this->Cell(0, 6, utf8_decode(strtoupper($infraccion->departamento->getInquilino())), 0, 1, 'L');
+		$this->Cell(0, 6, utf8_decode(strtoupper($infraccion->departamento->getCondominio()." / ".$infraccion->departamento->getInquilino())), 0, 1, 'L');
 		$this->Cell(0, 6, utf8_decode("DEPARTAMENTO ".$infraccion->departamento->getClave()), 0, 1, 'L');
 		$this->Cell(0, 6, utf8_decode("PRESENTE"), 0, 1, 'L');
 		
@@ -95,11 +95,48 @@ class RCarta extends tFPDF{
 		$this->SetTextColor(0, 0, 0);
 		$y = $this->getY();
 		$x = $this->getX();
-		$this->Cell(20, 6); $this->MultiCell(50, 6, utf8_decode("SANCIÓN POR INFRINGIR ".strtoupper($infraccion->area->getNombre())), 0, 'J');
+		$this->Cell(20, 6); $this->MultiCell(50, 6, utf8_decode("SANCIÓN POR INFRINGIR REGLAMENTO ".strtoupper($infraccion->area->getNombre())), 0, 'J');
 		$this->SetTextColor(255, 0, 0);
 		$this->setXY($x + 120, $y);
 		$this->SetFont('Arial', 'B', 20); 
 		$this->Cell(50, 12, utf8_decode("$ ".$infraccion->getMonto()), 1, 0, 'C');
+		
+		
+		$repositorio = "repositorio/infracciones/";
+		
+		
+		$directorio = scandir($repositorio.$infraccion->getId().'/');
+		$imgs = array();
+		foreach($directorio as $archivo){
+			if (! ($archivo == '.' or $archivo == '..' or $archivo == 'thumbnail')){
+				$img = array();
+				$img['nombre'] = $archivo;
+				$img['miniatura'] = $url_repo."thumbnail/".$archivo;
+				$img['real'] = $url_repo.$archivo;
+				
+				array_push($imgs, $img);
+			}
+		}
+		
+		$this->Ln(30);
+		
+		switch(strtoupper(pathinfo($repositorio.$infraccion->getId()."/".$imgs[0]['nombre'], PATHINFO_EXTENSION))){
+			case 'JPG': 
+			case 'JPEG':
+			case 'PNG':
+			case 'GIF':
+				$this->Image($repositorio.$infraccion->getId()."/".$imgs[0]['nombre']);
+			break;
+			case 'BMP':
+				$jpg = $repositorio.$infraccion->getId()."/".$imgs[0]['nombre'].".jpg";
+				$img= imagecreatefrombmp($repositorio.$infraccion->getId()."/".$imgs[0]['nombre']);
+				
+				imagejpeg($img, $jpg, 100);
+				$this->Image($jpg, 40);
+			break;
+			default:
+			break;
+		}
 		
 		$this->SetFont('Arial', 'B', 8); 
 		$this->SetY(-63);

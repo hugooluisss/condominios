@@ -58,7 +58,8 @@
 			</div>
 		</form>
 		<br />
-		<div id="dvLista"></div>
+		<div class="alert alert-info visible-xs">Recorre de forma horizontal para ver el contenido completo de la tabla</div>
+		<div id="dvLista" class="table-responsive"></div>
 	</div>
 </div>
 

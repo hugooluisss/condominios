@@ -29,29 +29,29 @@ class RGeneral extends tFPDF{
 		$this->Cell(0, 5, utf8_decode("Del ".$_POST['fechaInicio']." al ".$_POST['fechaFin']), 0, 0, 'L');
 		$this->Ln(10);
 		$this->SetFont('Arial', 'B', 8);
-		$this->Cell(30, 5, utf8_decode("Fecha / Hora"), 1, 0, 'C');
+		$this->Cell(25, 5, utf8_decode("Fecha / Hora"), 1, 0, 'C');
 		$this->Cell(10, 5, utf8_decode("Depto"), 1, 0, 'C');
-		$this->Cell(40, 5, utf8_decode("Condominio"), 1, 0, 'C');
+		$this->Cell(47, 5, utf8_decode("Condominio"), 1, 0, 'C');
 		$this->Cell(50, 5, utf8_decode("Inquilino"), 1, 0, 'C');
-		$this->Cell(20, 5, utf8_decode("Reglamento"), 1, 0, 'C');
+		$this->Cell(30, 5, utf8_decode("Reglamento"), 1, 0, 'C');
 		$this->Cell(5, 5, utf8_decode("OC"), 1, 0, 'C');
-		$this->Cell(20, 5, utf8_decode("Monto"), 1, 0, 'C');
-		$this->Cell(25, 5, utf8_decode("Estado"), 1, 1, 'C');
+		$this->Cell(15, 5, utf8_decode("Monto"), 1, 0, 'C');
+		$this->Cell(15, 5, utf8_decode("Estado"), 1, 1, 'C');
 		
 	}
 	
 	public function generar($datos){
 		$this->AddPage();
 		foreach($datos as $obj){
-			$this->SetFont('Arial', '', 8);
-			$this->Cell(30, 5, utf8_decode($obj['fecha']." / ".$obj['hora']), 0, 0, 'L');
+			$this->SetFont('Arial', '', 6);
+			$this->Cell(25, 5, utf8_decode($obj['fecha']." / ".$obj['hora']), 0, 0, 'L');
 			$this->Cell(10, 5, utf8_decode($obj['claveDepto']), 0, 0, 'C');
-			$this->Cell(40, 5, utf8_decode($obj['condominio']), 0, 0, 'L');
+			$this->Cell(47, 5, utf8_decode($obj['condominio']), 0, 0, 'L');
 			$this->Cell(50, 5, utf8_decode($obj['inquilino']), 0, 0, 'L');
-			$this->Cell(20, 5, utf8_decode($obj['area']), 0, 0, 'L');
+			$this->Cell(30, 5, utf8_decode($obj['area']), 0, 0, 'L');
 			$this->Cell(5, 5, utf8_decode($obj['ocasion']), 0, 0, 'C');
-			$this->Cell(20, 5, utf8_decode("$ ".sprintf("%02s", $obj['monto'])), 0, 0, 'R');
-			$this->Cell(25, 5, utf8_decode($obj['estado']), 0, 1, 'C');
+			$this->Cell(15, 5, utf8_decode("$ ".sprintf("%02s", $obj['monto'])), 0, 0, 'R');
+			$this->Cell(15, 5, utf8_decode($obj['estado']), 0, 1, 'C');
 		}
 	}
 	

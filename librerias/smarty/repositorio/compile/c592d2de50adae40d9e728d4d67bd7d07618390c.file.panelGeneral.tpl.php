@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-06-23 21:53:10
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-24 21:35:47
          compiled from "templates/plantillas/modulos/reportes/panelGeneral.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:976996148576ca096861401-66163288%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c592d2de50adae40d9e728d4d67bd7d07618390c' => 
     array (
       0 => 'templates/plantillas/modulos/reportes/panelGeneral.tpl',
-      1 => 1466568325,
+      1 => 1466822146,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_576ca0968e8948_92172440',
   'variables' => 
   array (
     'estados' => 0,
@@ -23,8 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'areas' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_576ca0968e8948_92172440',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_576ca0968e8948_92172440')) {function content_576ca0968e8948_92172440($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Library/WebServer/Documents/condominios/librerias/smarty/plugins/modifier.date_format.php';
 ?><div class="row">
@@ -110,7 +110,8 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 			</div>
 		</form>
 		<br />
-		<div id="dvLista"></div>
+		<div class="alert alert-info visible-xs">Recorre de forma horizontal para ver el contenido completo de la tabla</div>
+		<div id="dvLista" class="table-responsive"></div>
 	</div>
 </div>
 

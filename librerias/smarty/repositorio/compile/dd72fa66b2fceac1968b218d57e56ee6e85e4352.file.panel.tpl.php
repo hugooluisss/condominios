@@ -1,4 +1,25 @@
-<div class="row">
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-24 22:28:12
+         compiled from "templates/plantillas/modulos/departamentos/panel.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:1779820117576dfa4c6e2bb6-10010152%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'dd72fa66b2fceac1968b218d57e56ee6e85e4352' => 
+    array (
+      0 => 'templates/plantillas/modulos/departamentos/panel.tpl',
+      1 => 1466736387,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1779820117576dfa4c6e2bb6-10010152',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_576dfa4c719990_02762036',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_576dfa4c719990_02762036')) {function content_576dfa4c719990_02762036($_smarty_tpl) {?><div class="row">
 	<div class="col-lg-12">
 		<h1 class="page-header">Departamentos</h1>
 	</div>
@@ -47,7 +68,7 @@
 					<div class="form-group">
 						<label for="txtReferencia" class="col-lg-2">Referencia</label>
 						<div class="col-lg-2">
-							<input class="form-control" id="txtReferencia" name="txtReferencia" value="" maxlength="5">
+							<input class="form-control" id="txtReferencia" name="txtReferencia" value="" maxlength="4">
 						</div>
 					</div>
 				</div>
@@ -59,4 +80,4 @@
 			</div>
 		</form>
 	</div>
-</div>
+</div><?php }} ?>
