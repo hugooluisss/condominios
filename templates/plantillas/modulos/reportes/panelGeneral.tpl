@@ -89,6 +89,12 @@
 					<div class="col-lg-2 text-right text-success">Hora</div>
 					<div class="col-lg-4" campo="hora"></div>
 				</div>
+				<div class="row" id="estado">
+					<div class="col-lg-2 text-right text-success">Estado</div>
+					<div class="col-lg-4" campo="estado"></div>
+					<div class="col-lg-2 text-right text-success">Motivo</div>
+					<div class="col-lg-4" campo="motivo"></div>
+				</div>
 				<div class="row">
 					<div class="col-lg-2 text-right text-success">Departamento</div>
 					<div class="col-lg-4" campo="claveDepto"></div>

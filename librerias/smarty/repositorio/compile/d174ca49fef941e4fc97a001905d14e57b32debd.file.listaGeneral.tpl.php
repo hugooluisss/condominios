@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-06-23 21:53:11
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-30 08:23:47
          compiled from "templates/plantillas/modulos/reportes/listaGeneral.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1666269101576ca097c056c7-07649057%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd174ca49fef941e4fc97a001905d14e57b32debd' => 
     array (
       0 => 'templates/plantillas/modulos/reportes/listaGeneral.tpl',
-      1 => 1466563951,
+      1 => 1466603771,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_576ca097c84226_37172849',
   'variables' => 
   array (
     'lista' => 0,
     'row' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_576ca097c84226_37172849',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_576ca097c84226_37172849')) {function content_576ca097c84226_37172849($_smarty_tpl) {?><table id="tblLista" class="table table-bordered table-hover">
 	<thead>

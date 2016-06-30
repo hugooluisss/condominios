@@ -155,8 +155,9 @@ $(document).ready(function(){
 	
 	$("#btnRechazar").click(function(){
 		if (confirm("¿Seguro?")){
+			var comentario = prompt("¿Por que la estás rechazando?", "");
 			var obj = new TInfraccion;
-			obj.setRechazada($("#id").val(), {
+			obj.setRechazada($("#id").val(), comentario, {
 				before: function(){
 					$("#btnAplicar").prop("disabled", true);
 				}, after: function(resp){

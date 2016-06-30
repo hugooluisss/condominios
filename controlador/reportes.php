@@ -40,7 +40,7 @@ switch($objModulo->getId()){
 		$fechaInicio = $_POST['fechaInicio'] == ''?date("Y-m-d"):$_POST['fechaInicio'];
 		$fechaFin = $_POST['fechaFin'] == ''?date("Y-m-d"):$_POST['fechaFin'];
 		
-		$rs = $db->Execute("select *, b.clave as claveDepto, c.nombre as area, d.nombre as estado from infraccion a join departamento b using(idDepartamento) join area c using(idArea) join estado d using(idEstado) where idEstado like '".$estado."' and idDepartamento like '".$departamento."' and idArea like '".$area."' and fecha between '".$fechaInicio."' and '".$fechaFin."'");
+		$rs = $db->Execute("select *, b.clave as claveDepto, c.nombre as area, d.nombre as estado, e.comentario as motivo from infraccion a join departamento b using(idDepartamento) join area c using(idArea) join estado d using(idEstado) left join rechazada e using(idInfraccion) where idEstado like '".$estado."' and idDepartamento like '".$departamento."' and idArea like '".$area."' and fecha between '".$fechaInicio."' and '".$fechaFin."'");
 		
 		$datos = array();
 		while(!$rs->EOF){

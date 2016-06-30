@@ -45,6 +45,9 @@ $(document).ready(function(){
 					$("#winAutorizar").find("[campo=" + key +"]").text(value);
 				});
 				
+				$("#estado").hide();
+				if (el.idEstado == 3) $("#estado").show();
+				
 				$("#winAutorizar").find("#id").val(el.idInfraccion);
 				getListaImagenes();
 				$("#btnCartaFicha").prop("disabled", false);

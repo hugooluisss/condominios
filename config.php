@@ -178,6 +178,7 @@ $conf['cinfracciones'] = array(
 	'controlador' => 'infracciones.php',
 	'descripcion' => 'Controlador de infracciones',
 	'seguridad' => true,
+	'debugSeg' => false,
 	'capa' => LAYOUT_AJAX);
 	
 $conf['autorizarInfracciones'] = array(

@@ -20,7 +20,7 @@ class RGeneral extends tFPDF{
 	public function Header(){
 		parent::Header();
 		
-		$this->Image('repositorio/formato/logo.jpg', 180, 10, 30, 35);
+		#$this->Image('repositorio/formato/logo.jpg', 180, 10, 30, 35);
 		$this->SetFont('Arial', 'B', 20);
 		$this->Ln(5);
 		$this->Cell(0, 5, utf8_decode("Reporte de infracciones"), 0, 0, 'C');
