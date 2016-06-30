@@ -44,14 +44,22 @@ class RGeneral extends tFPDF{
 		$this->AddPage();
 		foreach($datos as $obj){
 			$this->SetFont('Arial', '', 6);
+			$y = $this->GetY();
 			$this->Cell(25, 5, utf8_decode($obj['fecha']." / ".$obj['hora']), 0, 0, 'L');
 			$this->Cell(10, 5, utf8_decode($obj['claveDepto']), 0, 0, 'C');
-			$this->Cell(47, 5, utf8_decode($obj['condominio']), 0, 0, 'L');
-			$this->Cell(50, 5, utf8_decode($obj['inquilino']), 0, 0, 'L');
+			#$this->Cell(47, 5, utf8_decode($obj['condominio']), 0, 0, 'L');
+			$x = $this->GetX(); 
+			$this->MultiCell(47, 2.5, utf8_decode($obj['condominio']), 0, 'L', 0);
+			$this->SetXY($x+47, $y);
+			#$this->Cell(50, 5, utf8_decode($obj['inquilino']), 0, 0, 'L');
+			$x = $this->GetX();
+			$this->MultiCell(50, 2.5, utf8_decode($obj['inquilino']), 0, 'L', 0);
+			$this->SetXY($x+50, $y);
 			$this->Cell(30, 5, utf8_decode($obj['area']), 0, 0, 'L');
 			$this->Cell(5, 5, utf8_decode($obj['ocasion']), 0, 0, 'C');
 			$this->Cell(15, 5, utf8_decode("$ ".sprintf("%02s", $obj['monto'])), 0, 0, 'R');
 			$this->Cell(15, 5, utf8_decode($obj['estado']), 0, 1, 'C');
+			$this->Ln(5);
 		}
 	}
 	

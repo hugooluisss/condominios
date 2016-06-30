@@ -174,6 +174,8 @@ $(document).ready(function(){
 	});
 	
 	function openDocumento(documento){
+		window.open(documento,'_blank');
+		/*
 		if (ventana == undefined || ventana == null)
 			ventana = window.open(documento,'_blank');
 		else{
@@ -186,6 +188,6 @@ $(document).ready(function(){
 			
 		}
 		
-		ventana.focus();
+		ventana.focus();*/
 	}
 });

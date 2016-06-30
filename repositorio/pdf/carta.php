@@ -29,7 +29,8 @@ class RCarta extends tFPDF{
 		$this->Cell(0, 6, utf8_decode("SANCIÓN OCASIONAL #".$infraccion->getOcasion()), 0, 1, 'C');
 		$this->Ln(10);
 		$this->Cell(0, 6, utf8_decode("RESIDENCIAL TAMARINDOS 130 P. EN C."), 0, 1, 'L');
-		$this->Cell(0, 6, utf8_decode(strtoupper($infraccion->departamento->getCondominio()." / ".$infraccion->departamento->getInquilino())), 0, 1, 'L');
+		$this->MultiCell(140, 6, utf8_decode(strtoupper($infraccion->departamento->getCondominio()." / ".$infraccion->departamento->getInquilino())), 0, 'L');
+		#$this->Ln(6);
 		$this->Cell(0, 6, utf8_decode("DEPARTAMENTO ".$infraccion->departamento->getClave()), 0, 1, 'L');
 		$this->Cell(0, 6, utf8_decode("PRESENTE"), 0, 1, 'L');
 		
@@ -85,7 +86,7 @@ class RCarta extends tFPDF{
 		$this->SetFont('Arial', 'B', 10); 
 		$this->Cell(50, 6, utf8_decode("NOMBRE:"), 0, 0, 'C');
 		$this->SetTextColor(255, 0, 0);
-		$this->Cell(0, 6, utf8_decode(strtoupper($infraccion->departamento->getCondominio()." / ".$infraccion->departamento->getInquilino())), 'B', 1, 'L');
+		$this->MultiCell(0, 6, utf8_decode(strtoupper($infraccion->departamento->getCondominio()." / ".$infraccion->departamento->getInquilino())), 'B', 'L');
 		$this->SetTextColor(0);
 		$this->Ln(8);
 		$this->Cell(50, 6, utf8_decode("DEPARTAMENTO No: "), 0, 0, 'C');
