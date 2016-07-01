@@ -33,6 +33,7 @@ switch($objModulo->getId()){
 		$rs = $db->Execute("select *, b.clave as claveDepto, c.nombre as area from infraccion a join departamento b using(idDepartamento) join area c using(idArea) where idEstado = 1");
 		$datos = array();
 		while(!$rs->EOF){
+			$rs->fields['hora2'] = date("h:i A", strtotime($rs->fields['hora']));
 			$rs->fields['json'] = json_encode($rs->fields);
 			array_push($datos, $rs->fields);
 			
@@ -106,7 +107,7 @@ switch($objModulo->getId()){
 				$obj->setEstado(1); #siempre es uno cuando se registra la 
 				$obj->setArea($_POST['area']);
 				$obj->setFecha($_POST['fecha']);
-				$obj->setHora($_POST['hora']);
+				$obj->setHora(date("H:i:s", strtotime($_POST['hora'])));
 				$obj->setServidor($_POST['servidor']);
 				$obj->setCamara($_POST['camara']);
 				$obj->setDescripcion($_POST['descripcion']);

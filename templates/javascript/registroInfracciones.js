@@ -62,7 +62,7 @@ $(document).ready(function(){
 				$("#txtDepartamento").attr("identificador"),
 				$("#selArea").val(),
 				$("#txtFecha").val(),
-				$("#txthora").val(),
+				$("#txtHora").val(),
 				$("#selServidor").val(),
 				$("#selCamara").val(),
 				$("#txtDescripcion").val(),
@@ -109,7 +109,7 @@ $(document).ready(function(){
 				}
 				
 				
-				$("#txtHora").val(el.hora);
+				$("#txtHora").val(el.hora2);
 				$("#selInciso").val(el.inciso);
 				$("#selServidor").val(el.servidor);
 				$("#selCamara").val(el.camara);
