@@ -155,8 +155,9 @@ $(document).ready(function(){
 	
 	$("#btnRechazar").click(function(){
 		if (confirm("¿Seguro?")){
+			var comentario = prompt("¿Por que la estás rechazando?", "");
 			var obj = new TInfraccion;
-			obj.setRechazada($("#id").val(), {
+			obj.setRechazada($("#id").val(), comentario, {
 				before: function(){
 					$("#btnAplicar").prop("disabled", true);
 				}, after: function(resp){
@@ -173,6 +174,8 @@ $(document).ready(function(){
 	});
 	
 	function openDocumento(documento){
+		window.open(documento,'_blank');
+		/*
 		if (ventana == undefined || ventana == null)
 			ventana = window.open(documento,'_blank');
 		else{
@@ -185,6 +188,6 @@ $(document).ready(function(){
 			
 		}
 		
-		ventana.focus();
+		ventana.focus();*/
 	}
 });

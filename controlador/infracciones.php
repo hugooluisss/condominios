@@ -129,6 +129,7 @@ switch($objModulo->getId()){
 			case 'rechazar':
 				$obj = new TInfraccion($_POST['id']);
 				$obj->estado->setId(3);
+				$obj->setComentarioRechazar($_POST['comentario']);
 				echo json_encode(array("band" => $obj->guardar()));
 			break;
 			case 'pagar':

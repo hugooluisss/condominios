@@ -429,5 +429,24 @@ class TInfraccion{
 		
 		return $rs?true:false;
 	}
+	
+	/**
+	* Establece el comentario por el cual la infracción fue rechazada
+	*
+	* @autor Hugo
+	* @access public
+	* @return boolean True si se realizó sin problemas
+	*/
+	
+	public function setComentarioRechazar($comentario = ''){
+		if ($this->getId() == '') return false;
+		
+		$db = TBase::conectaDB();
+		$rs = $db->Execute("delete from rechazada where idInfraccion = ".$this->getId());
+		
+		$rs = $db->Execute("insert into rechazada (idInfraccion, comentario) values (".$this->getId().", '".$comentario."')");
+		
+		return $rs?true:false;
+	}
 }
 ?>

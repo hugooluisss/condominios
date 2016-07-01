@@ -80,9 +80,10 @@ TInfraccion = function(){
 		}, "json");
 	};
 	
-	this.setRechazada = function(id, fn){
+	this.setRechazada = function(id, comentario, fn){
 		$.post('cinfracciones', {
 			"id": id,
+			"comentario": comentario,
 			"action": "rechazar"
 		}, function(data){
 			if (fn.after != undefined)

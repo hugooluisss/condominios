@@ -113,6 +113,7 @@ class RGeneral{
 		if($this->generar())
 			$this->libro->close();
 		
+		chmod($this->file, 0555);
 		return $this->file;
 	}
 }

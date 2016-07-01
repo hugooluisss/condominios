@@ -45,6 +45,9 @@ $(document).ready(function(){
 					$("#winAutorizar").find("[campo=" + key +"]").text(value);
 				});
 				
+				$("#estado").hide();
+				if (el.idEstado == 3) $("#estado").show();
+				
 				$("#winAutorizar").find("#id").val(el.idInfraccion);
 				getListaImagenes();
 				$("#btnCartaFicha").prop("disabled", false);
@@ -139,6 +142,8 @@ $(document).ready(function(){
 	}
 	
 	function openDocumento(documento){
+		window.open(documento,'_blank');
+		/*
 		if (ventana == undefined || ventana == null)
 			ventana = window.open(documento,'_blank');
 		else{
@@ -151,6 +156,6 @@ $(document).ready(function(){
 			
 		}
 		
-		ventana.focus();
+		ventana.focus();*/
 	}
 });

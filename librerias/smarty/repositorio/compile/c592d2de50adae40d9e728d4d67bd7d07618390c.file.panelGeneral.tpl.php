@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-06-24 21:35:47
+<?php /* Smarty version Smarty-3.1.11, created on 2016-06-30 08:41:10
          compiled from "templates/plantillas/modulos/reportes/panelGeneral.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:976996148576ca096861401-66163288%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c592d2de50adae40d9e728d4d67bd7d07618390c' => 
     array (
       0 => 'templates/plantillas/modulos/reportes/panelGeneral.tpl',
-      1 => 1466822146,
+      1 => 1467294002,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_576ca0968e8948_92172440')) {function content_576ca0968e8948_92172440($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Library/WebServer/Documents/condominios/librerias/smarty/plugins/modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_576ca0968e8948_92172440')) {function content_576ca0968e8948_92172440($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Library/WebServer/Documents/condominios2/librerias/smarty/plugins/modifier.date_format.php';
 ?><div class="row">
 	<div class="col-lg-12">
 		<h1 class="page-header">Reporte general de infracciones</h1>
@@ -140,6 +140,12 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 					<div class="col-lg-4" campo="fecha"></div>
 					<div class="col-lg-2 text-right text-success">Hora</div>
 					<div class="col-lg-4" campo="hora"></div>
+				</div>
+				<div class="row" id="estado">
+					<div class="col-lg-2 text-right text-success">Estado</div>
+					<div class="col-lg-4" campo="estado"></div>
+					<div class="col-lg-2 text-right text-success">Motivo</div>
+					<div class="col-lg-4" campo="motivo"></div>
 				</div>
 				<div class="row">
 					<div class="col-lg-2 text-right text-success">Departamento</div>
